@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hatua | Creative Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body { background: #050505; color: white; font-family: 'Space Grotesk', sans-serif; overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Syncopate', sans-serif; }
+        
+        /* Fluid Blob Background */
+        .blob-cont { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1; filter: blur(80px); opacity: 0.6; }
+        .blob { position: absolute; border-radius: 50%; animation: float 10s infinite ease-in-out alternate; }
+        .blob-1 { top: 10%; left: 10%; width: 500px; height: 500px; background: #ff0055; }
+        .blob-2 { bottom: 10%; right: 10%; width: 400px; height: 400px; background: #ffaa00; animation-delay: 2s; }
+        .blob-3 { top: 40%; left: 40%; width: 300px; height: 300px; background: #aa00ff; animation-delay: 4s; }
+        @keyframes float { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(30px, 50px) scale(1.1); } }
+        
+        /* Glass Cards */
+        .service-card { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(10px); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card:hover { transform: translateY(-10px) scale(1.02); background: rgba(255, 255, 255, 0.08); border-color: rgba(255,255,255,0.3); }
+        
+        /* Fun Badge */
+        .badge { font-size: 10px; padding: 4px 8px; border-radius: 20px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; display: inline-block; margin-bottom: 10px; }
+        
+        /* Form Inputs */
+        input, textarea, select { background: transparent; border-bottom: 1px solid rgba(255,255,255,0.3); color: white; outline: none; width: 100%; padding: 15px 0; transition: border-color 0.3s; font-size: 1.1rem; }
+        input:focus, textarea:focus, select:focus { border-color: #ff0055; }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-thumb { background: #ff0055; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+    <div class="blob-cont">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <nav class="p-8 flex justify-between items-center relative z-10">
+        <a href="index.html" class="flex items-center gap-2 hover:text-pink-500 transition">
+            <span class="text-xs font-bold tracking-widest border border-white/20 px-4 py-2 rounded-full">← ESCAPE TO HUB</span>
+        </a>
+        <a href="index.html">
+            <img src="logo.png" alt="Logo" class="h-10 md:h-12 w-auto object-contain">
+        </a>
+    </nav>
+
+    <section class="min-h-[50vh] flex flex-col justify-center px-6 md:px-20 relative z-10 text-center md:text-left">
+        <h1 class="text-5xl md:text-8xl font-bold leading-none hero-text">
+            DON'T BE <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-yellow-500">BORING.</span>
+        </h1>
+        <p class="mt-6 text-xl md:text-2xl max-w-2xl text-gray-200 opacity-0 hero-sub font-light">
+            We turn "just another company" into a cult favorite. From viral tweets to cinematic visuals, we bring the flavor.
+        </p>
+    </section>
+
+    <section class="px-6 md:px-20 py-20 bg-black/40 backdrop-blur-md">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="service-card p-8 rounded-2xl group">
+                <span class="badge bg-pink-500/20 text-pink-500">The Loudspeaker</span>
+                <h3 class="text-3xl font-bold mb-3">Social Media Management</h3>
+                <p class="text-gray-400 leading-relaxed mb-6">
+                    We don't just "post." We create culture. We turn your brand into a personality that people actually want to follow. We handle the memes, the comments, and the DMs so you stay relevant while you sleep.
+                </p>
+                <div class="text-xs font-bold tracking-widest text-pink-400">INCLUDES: INSTAGRAM • TIKTOK • LINKEDIN</div>
+            </div>
+
+            <div class="service-card p-8 rounded-2xl group">
+                <span class="badge bg-yellow-500/20 text-yellow-500">Visual Sorcery</span>
+                <h3 class="text-3xl font-bold mb-3">High-End Photography</h3>
+                <p class="text-gray-400 leading-relaxed mb-6">
+                    Your iPhone camera isn't cutting it. We bring the big lights and heavy lenses to make your products look edible and your team look like rockstars. Crisp, clean, and impossible to ignore.
+                </p>
+                <div class="text-xs font-bold tracking-widest text-yellow-400">INCLUDES: PRODUCT • EVENTS • PORTRAITS</div>
+            </div>
+
+            <div class="service-card p-8 rounded-2xl group">
+                <span class="badge bg-purple-500/20 text-purple-500">Cinema Mode</span>
+                <h3 class="text-3xl font-bold mb-3">4K Videography</h3>
+                <p class="text-gray-400 leading-relaxed mb-6">
+                    Motion creates emotion. Whether it's a 15-second Reel or a brand documentary, we shoot visuals that stop the thumb-scroll. We script, shoot, edit, and color grade until it looks like Netflix.
+                </p>
+                <div class="text-xs font-bold tracking-widest text-purple-400">INCLUDES: COMMERCIALS • REELS • DRONE</div>
+            </div>
+
+            <div class="service-card p-8 rounded-2xl group">
+                <span class="badge bg-green-500/20 text-green-500">The Money Printer</span>
+                <h3 class="text-3xl font-bold mb-3">Digital Marketing</h3>
+                <p class="text-gray-400 leading-relaxed mb-6">
+                    Prettiness is nice, but sales are better. We run targeted ads on Google and Meta that hunt down your ideal customers. We look at the data, tweak the budget, and turn $1 into $5.
+                </p>
+                <div class="text-xs font-bold tracking-widest text-green-400">INCLUDES: SEO • PPC ADS • ANALYTICS</div>
+            </div>
+
+            <div class="service-card p-8 rounded-2xl group">
+                <span class="badge bg-blue-500/20 text-blue-500">The Shield</span>
+                <h3 class="text-3xl font-bold mb-3">BPO & Call Support</h3>
+                <p class="text-gray-400 leading-relaxed mb-6">
+                    Stop letting calls go to voicemail. Our team becomes your frontline. We handle angry customers, sales inquiries, and appointment bookings with a smile, so your office stays zen.
+                </p>
+                <div class="text-xs font-bold tracking-widest text-blue-400">INCLUDES: 24/7 SUPPORT • DATA ENTRY • CRM</div>
+            </div>
+
+            <div class="service-card p-8 rounded-2xl group">
+                <span class="badge bg-orange-500/20 text-orange-500">The Face</span>
+                <h3 class="text-3xl font-bold mb-3">Creative Branding</h3>
+                <p class="text-gray-400 leading-relaxed mb-6">
+                    A logo is just a sticker. A brand is a feeling. We design your entire visual identity—fonts, colors, and vibes—so that when people see your stuff, they know it's premium.
+                </p>
+                <div class="text-xs font-bold tracking-widest text-orange-400">INCLUDES: LOGOS • GUIDELINES • MERCH</div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-20 px-6 md:px-20 relative z-10 text-center">
+        <h2 class="text-2xl font-bold mb-12 tracking-widest text-white/50">HOW WE COOK</h2>
+        <div class="flex flex-col md:flex-row justify-center items-center gap-8 text-left">
+            <div class="w-full md:w-1/4 p-6 border border-white/10 rounded-xl bg-black/20">
+                <div class="text-4xl text-pink-500 mb-2">01.</div>
+                <h4 class="font-bold">The Brainstorm</h4>
+                <p class="text-xs text-gray-400 mt-2">We drink coffee and throw crazy ideas at the wall.</p>
+            </div>
+            <div class="hidden md:block text-2xl text-gray-600">→</div>
+            <div class="w-full md:w-1/4 p-6 border border-white/10 rounded-xl bg-black/20">
+                <div class="text-4xl text-yellow-500 mb-2">02.</div>
+                <h4 class="font-bold">The Creation</h4>
+                <p class="text-xs text-gray-400 mt-2">We shoot, design, and write until it's perfect.</p>
+            </div>
+            <div class="hidden md:block text-2xl text-gray-600">→</div>
+            <div class="w-full md:w-1/4 p-6 border border-white/10 rounded-xl bg-black/20">
+                <div class="text-4xl text-green-500 mb-2">03.</div>
+                <h4 class="font-bold">The Launch</h4>
+                <p class="text-xs text-gray-400 mt-2">We push it live and watch the numbers climb.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 md:px-20 relative z-10">
+        <div class="bg-gradient-to-br from-gray-900 to-black border border-white/10 p-10 md:p-16 rounded-3xl">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">LET'S MAKE <br> MAGIC.</h2>
+                    <p class="text-gray-400 text-lg">
+                        Ready to upgrade your brand? Fill out this form and we'll get back to you faster than a pizza delivery.
+                    </p>
+                    <div class="mt-8 space-y-2 text-sm font-bold tracking-widest">
+                        <p class="text-pink-500">EMAIL: HELLO@HATUA.STUDIO</p>
+                        <p class="text-yellow-500">PHONE: +254 700 000 000</p>
+                    </div>
+                </div>
+                <form class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="text" placeholder="Name">
+                        <input type="text" placeholder="Company">
+                    </div>
+                    <input type="email" placeholder="Email Address">
+                    <select class="text-gray-400">
+                        <option>What do you need?</option>
+                        <option>Social Media Management</option>
+                        <option>Photography / Video</option>
+                        <option>Digital Marketing (Ads)</option>
+                        <option>BPO Call Support</option>
+                        <option>Full Branding</option>
+                    </select>
+                    <textarea rows="3" placeholder="Tell us about your project..."></textarea>
+                    <button class="w-full py-4 bg-white text-black font-bold rounded-xl hover:bg-pink-500 hover:text-white transition duration-300">
+                        SEND IT 🚀
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        gsap.to(".hero-text", { opacity: 1, y: 0, duration: 1.5, ease: "power4.out" });
+        gsap.to(".hero-sub", { opacity: 1, y: 0, duration: 1.5, delay: 0.3, ease: "power4.out" });
+    </script>
+</body>
+</html>
