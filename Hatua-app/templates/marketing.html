@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hatua | Creative Studio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
     <style>
         .blob-cont { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1; filter: blur(80px); opacity: 0.6; }
         .blob { position: absolute; border-radius: 50%; animation: float 10s infinite ease-in-out alternate; }
@@ -24,8 +26,7 @@
     </style>
 </head>
 <body>
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
+
     <div class="blob-cont">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
@@ -38,15 +39,55 @@
     </nav>
 
     <section class="min-h-[50vh] flex flex-col justify-center px-6 md:px-20 relative z-10 text-center md:text-left">
-        <h1 class="text-5xl md:text-8xl font-bold leading-none">DON'T BE <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-yellow-500">BORING.</span></h1>
-        <p class="mt-6 text-xl md:text-2xl max-w-2xl text-gray-200 font-light">We turn "just another company" into a cult favorite.</p>
+        <h1 class="text-5xl md:text-8xl font-bold leading-none hero-text">DON'T BE <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-yellow-500">BORING.</span></h1>
+        <p class="mt-6 text-xl md:text-2xl max-w-2xl text-gray-200 opacity-0 hero-sub font-light">We turn "just another company" into a cult favorite. From viral tweets to cinematic visuals, we bring the flavor.</p>
     </section>
 
     <section class="px-6 md:px-20 py-20 bg-black/40 backdrop-blur-md">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="service-card p-8 rounded-2xl group"><span class="badge bg-pink-500/20 text-pink-500">The Loudspeaker</span><h3 class="text-3xl font-bold mb-3">Social Media</h3><p class="text-gray-400">We create culture, not just posts. Instagram, TikTok, LinkedIn.</p></div>
-            <div class="service-card p-8 rounded-2xl group"><span class="badge bg-yellow-500/20 text-yellow-500">Visual Sorcery</span><h3 class="text-3xl font-bold mb-3">Photography</h3><p class="text-gray-400">Crisp, clean, professional shots.</p></div>
-            <div class="service-card p-8 rounded-2xl group"><span class="badge bg-green-500/20 text-green-500">Money Printer</span><h3 class="text-3xl font-bold mb-3">Digital Ads</h3><p class="text-gray-400">SEO & PPC that actually converts.</p></div>
+            
+            <div class="service-card p-8 rounded-2xl group border-t-4 border-pink-500">
+                <span class="badge bg-pink-500/20 text-pink-500">The Loudspeaker</span>
+                <h3 class="text-3xl font-bold mb-3">Social Media</h3>
+                <p class="text-gray-400 mb-4">We create culture, not just posts. We handle the memes, comments, and DMs so you stay relevant.</p>
+                <div class="text-xs font-bold tracking-widest text-pink-400">INSTAGRAM • TIKTOK • LINKEDIN</div>
+            </div>
+
+            <div class="service-card p-8 rounded-2xl group border-t-4 border-yellow-500">
+                <span class="badge bg-yellow-500/20 text-yellow-500">Visual Sorcery</span>
+                <h3 class="text-3xl font-bold mb-3">Photography</h3>
+                <p class="text-gray-400 mb-4">Your iPhone camera isn't cutting it. We bring the big lights to make your products look edible.</p>
+                <div class="text-xs font-bold tracking-widest text-yellow-400">PRODUCT • EVENTS • PORTRAITS</div>
+            </div>
+
+            <div class="service-card p-8 rounded-2xl group border-t-4 border-purple-500">
+                <span class="badge bg-purple-500/20 text-purple-500">Cinema Mode</span>
+                <h3 class="text-3xl font-bold mb-3">4K Videography</h3>
+                <p class="text-gray-400 mb-4">Motion creates emotion. We shoot visuals that stop the thumb-scroll and look like Netflix.</p>
+                <div class="text-xs font-bold tracking-widest text-purple-400">COMMERCIALS • REELS • DRONE</div>
+            </div>
+
+            <div class="service-card p-8 rounded-2xl group border-t-4 border-green-500">
+                <span class="badge bg-green-500/20 text-green-500">Money Printer</span>
+                <h3 class="text-3xl font-bold mb-3">Digital Ads</h3>
+                <p class="text-gray-400 mb-4">Prettiness is nice, but sales are better. We run targeted ads that hunt down your ideal customers.</p>
+                <div class="text-xs font-bold tracking-widest text-green-400">SEO • PPC ADS • ANALYTICS</div>
+            </div>
+
+            <div class="service-card p-8 rounded-2xl group border-t-4 border-blue-500">
+                <span class="badge bg-blue-500/20 text-blue-500">The Shield</span>
+                <h3 class="text-3xl font-bold mb-3">BPO & Calls</h3>
+                <p class="text-gray-400 mb-4">Hate answering the phone? We love it. Our team handles your customer support with a smile.</p>
+                <div class="text-xs font-bold tracking-widest text-blue-400">24/7 SUPPORT • DATA ENTRY</div>
+            </div>
+
+            <div class="service-card p-8 rounded-2xl group border-t-4 border-orange-500">
+                <span class="badge bg-orange-500/20 text-orange-500">The Face</span>
+                <h3 class="text-3xl font-bold mb-3">Branding</h3>
+                <p class="text-gray-400 mb-4">A logo is just a sticker. A brand is a feeling. We design your entire visual identity.</p>
+                <div class="text-xs font-bold tracking-widest text-orange-400">LOGOS • GUIDELINES • MERCH</div>
+            </div>
+
         </div>
     </section>
 
@@ -54,13 +95,28 @@
         <div class="bg-gradient-to-br from-gray-900 to-black border border-white/10 p-10 md:p-16 rounded-3xl">
             <h2 class="text-4xl font-bold mb-6">LET'S MAKE MAGIC.</h2>
             <form action="/submit-form" method="POST" class="space-y-4">
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="email" name="email" placeholder="Email" required>
+                <div class="grid grid-cols-2 gap-4">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="text" name="company" placeholder="Company">
+                </div>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <select name="service" class="text-gray-400">
+                    <option value="">What do you need?</option>
+                    <option value="social">Social Media</option>
+                    <option value="video">Photography / Video</option>
+                    <option value="ads">Digital Marketing</option>
+                    <option value="bpo">BPO Call Support</option>
+                    <option value="branding">Full Branding</option>
+                </select>
                 <textarea name="message" rows="3" placeholder="Tell us about your project..."></textarea>
                 <button type="submit" class="w-full py-4 bg-white text-black font-bold rounded-xl hover:bg-pink-500 hover:text-white transition">SEND IT 🚀</button>
             </form>
         </div>
     </section>
-    <script src="{{ url_for('static', filename='main.js') }}"></script>
+
+    <script>
+        gsap.to(".hero-text", { opacity: 1, y: 0, duration: 1.5, ease: "power4.out" });
+        gsap.to(".hero-sub", { opacity: 1, y: 0, duration: 1.5, delay: 0.3, ease: "power4.out" });
+    </script>
 </body>
 </html>

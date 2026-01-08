@@ -10,9 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <style>
-        #webgl-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
-    </style>
 </head>
 <body>
     <div class="cursor-dot"></div>
@@ -30,7 +27,7 @@
     </nav>
 
     <section class="h-screen flex flex-col justify-center items-center text-center relative z-10 px-4">
-        <p class="text-[--neon-blue] tracking-[0.5em] text-xs mb-6 animate-pulse">SYSTEM ONLINE // V 4.0</p>
+        <p class="text-[--neon-blue] tracking-[0.5em] text-xs mb-6 animate-pulse">SYSTEM ONLINE</p>
         <h1 class="text-6xl md:text-9xl font-bold mb-4 glitch-text mix-blend-overlay" data-text="FUTURE READY">FUTURE READY</h1>
         <p class="max-w-xl text-gray-400 text-lg md:text-xl font-light leading-relaxed mb-12">Hatua Innovation Studio: An engine for digital evolution.</p>
         <a href="#services" class="group relative px-8 py-4 bg-transparent border border-white text-white font-bold tracking-widest overflow-hidden cursor-hover">
@@ -87,6 +84,11 @@
             </div>
         </div>
     </section>
+
+    <footer id="contact" class="py-20 text-center relative z-10">
+        <h2 class="text-4xl font-bold opacity-50 mb-8">CONTACT US</h2>
+        <p class="text-gray-500">hatuainnovationstudio@gmail.com</p>
+    </footer>
 
     <script src="{{ url_for('static', filename='main.js') }}"></script>
 </body>

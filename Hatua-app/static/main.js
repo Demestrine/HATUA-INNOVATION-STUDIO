@@ -6,6 +6,7 @@ if (cursorDot && cursorOutline) {
     window.addEventListener('mousemove', (e) => {
         cursorDot.style.left = `${e.clientX}px`;
         cursorDot.style.top = `${e.clientY}px`;
+        
         cursorOutline.animate({
             left: `${e.clientX}px`,
             top: `${e.clientY}px`
@@ -25,7 +26,6 @@ document.querySelectorAll('.cursor-hover').forEach(el => {
 });
 
 /* --- 3D BACKGROUND (THREE.JS) --- */
-// Only run this if the container exists (to prevent errors on other pages)
 const container = document.getElementById('webgl-container');
 
 if (container) {
@@ -82,7 +82,6 @@ if (container) {
         renderer.setSize(window.innerWidth, window.innerHeight);
     });
 
-    // Intro Animation
     if (typeof gsap !== 'undefined') {
         gsap.from("h1", { opacity: 0, y: 50, duration: 1.5, delay: 0.5, ease: "power4.out" });
     }
