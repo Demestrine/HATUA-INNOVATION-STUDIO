@@ -1,0 +1,73 @@
+/* --- GLOBAL VARIABLES --- */
+:root {
+    --neon-blue: #00f3ff;
+    --neon-purple: #bc13fe;
+}
+
+/* --- BASE STYLES --- */
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background: #000;
+    color: #fff;
+    cursor: none; /* Hides default cursor */
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Syncopate', sans-serif;
+    text-transform: uppercase;
+}
+
+/* --- CUSTOM CURSOR --- */
+.cursor-dot, .cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--neon-blue);
+}
+
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+body:hover .cursor-outline {
+    width: 50px;
+    height: 50px;
+    border-color: var(--neon-blue);
+    background: rgba(0, 243, 255, 0.1);
+}
+
+/* --- GLASS CARDS (Global) --- */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.2);
+}
+
+/* --- GLITCH EFFECT --- */
+.glitch-text { position: relative; }
+.glitch-text::before, .glitch-text::after { content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #000; }
+.glitch-text::before { left: 2px; text-shadow: -1px 0 #ff00c1; clip: rect(44px, 450px, 56px, 0); animation: glitch-anim 5s infinite linear alternate-reverse; }
+.glitch-text::after { left: -2px; text-shadow: -1px 0 #00fff9; clip: rect(44px, 450px, 56px, 0); animation: glitch-anim2 5s infinite linear alternate-reverse; }
+@keyframes glitch-anim { 0% { clip: rect(14px, 9999px, 127px, 0); } 100% { clip: rect(23px, 9999px, 94px, 0); } }
+@keyframes glitch-anim2 { 0% { clip: rect(64px, 9999px, 87px, 0); } 100% { clip: rect(13px, 9999px, 14px, 0); } }
