@@ -96,3 +96,21 @@ if (container) {
         gsap.from(".hero-sub", { opacity: 0, y: 0, duration: 1.5, delay: 0.3, ease: "power4.out" });
     }
 }
+// Function to load HTML components
+function loadComponent(elementId, filePath) {
+    fetch(filePath)
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById(elementId).innerHTML = data;
+        })
+        .catch(error => console.error('Error loading component:', error));
+}
+
+// Load the Navbar and Footer immediately
+document.addEventListener("DOMContentLoaded", function() {
+    loadComponent("navbar-placeholder", "navbar.html");
+    loadComponent("footer-placeholder", "footer.html");
+});

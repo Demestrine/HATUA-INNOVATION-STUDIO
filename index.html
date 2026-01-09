@@ -4,33 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HATUA | IMMERSIVE HUB</title>
+    
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="analytics.js"></script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        #webgl-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
-    </style>
 </head>
 <body>
+    
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
     <div id="webgl-container"></div>
 
-    <nav class="fixed w-full z-50 px-10 py-8 flex justify-between items-center mix-blend-difference">
-        <a href="index.html">
-            <img src="logo.png" class="h-16 md:h-20 w-auto object-contain hover:opacity-80 transition-opacity">
-        </a>
-        <div class="hidden md:flex space-x-12 text-sm font-bold tracking-widest">
-            <a href="#services" class="hover:text-[--neon-blue] cursor-hover">DIVISIONS</a>
-            <a href="about.html" class="hover:text-[--neon-blue] cursor-hover">ABOUT</a>
-        </div>
-    </nav>
+    <div id="navbar-placeholder"></div>
 
     <section class="h-screen flex flex-col justify-center items-center text-center relative z-10 px-4">
-        <p class="text-[--neon-blue] tracking-[0.5em] text-xs mb-6 animate-pulse">SYSTEM ONLINE // V 4.0</p>
+        <p class="text-[--neon-blue] tracking-[0.5em] text-xs mb-6 animate-pulse">SYSTEM ONLINE</p>
         <h1 class="text-6xl md:text-9xl font-bold mb-4 glitch-text mix-blend-overlay" data-text="FUTURE READY">FUTURE READY</h1>
         <p class="max-w-xl text-gray-400 text-lg md:text-xl font-light leading-relaxed mb-12">Hatua Innovation Studio: An engine for digital evolution.</p>
         <a href="#services" class="group relative px-8 py-4 bg-transparent border border-white text-white font-bold tracking-widest overflow-hidden cursor-hover">
@@ -91,24 +88,7 @@
         </div>
     </section>
 
-    <footer class="py-8 text-center relative z-10 border-t border-white/10 bg-black">
-        <h2 class="text-xl font-bold opacity-50 mb-4 tracking-widest">CONTACT US</h2>
-        
-        <div class="mb-6 space-y-1 text-sm text-gray-400 font-light">
-            <p><i class="fas fa-envelope mr-2"></i> hatuainnovationstudio@gmail.com</p>
-            <p><i class="fas fa-phone mr-2"></i> +254748276265</p>
-        </div>
-
-        <div class="flex justify-center gap-6 mb-6 text-2xl">
-            <a href="https://instagram.com" target="_blank" class="text-gray-600 hover:text-pink-500 transition duration-300"><i class="fab fa-instagram"></i></a>
-            <a href="https://facebook.com" target="_blank" class="text-gray-600 hover:text-blue-600 transition duration-300"><i class="fab fa-facebook"></i></a>
-            <a href="https://tiktok.com" target="_blank" class="text-gray-600 hover:text-white transition duration-300"><i class="fab fa-tiktok"></i></a>
-            <a href="https://linkedin.com" target="_blank" class="text-gray-600 hover:text-blue-400 transition duration-300"><i class="fab fa-linkedin"></i></a>
-            <a href="https://wa.me/254748276265" target="_blank" class="text-gray-600 hover:text-green-500 transition duration-300"><i class="fab fa-whatsapp"></i></a>
-        </div>
-
-        <p class="text-[10px] text-gray-700 tracking-[0.2em]">© 2025 HATUA INNOVATION STUDIO. ALL RIGHTS RESERVED.</p>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <script src="main.js"></script>
 </body>

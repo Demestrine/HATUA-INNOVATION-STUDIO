@@ -12,9 +12,44 @@
     <style>
         .stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: url('https://www.transparenttextures.com/patterns/stardust.png'); opacity: 0.3; }
         .glass-panel { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        /* Timeline Line */
         .timeline-line { position: absolute; left: 50%; transform: translateX(-50%); width: 2px; height: 100%; background: rgba(255,255,255,0.1); z-index: 0; }
         @media (max-width: 768px) { .timeline-line { left: 20px; } }
+        
+        /* Logo Filter for Dark Mode */
+        .brand-logo { 
+            filter: grayscale(100%) brightness(200%); 
+            opacity: 0.5; 
+            transition: all 0.5s ease;
+            flex-shrink: 0; /* Prevents squishing */
+        }
+        .brand-logo:hover { filter: grayscale(0%) brightness(100%); opacity: 1; transform: scale(1.1); }
+
+        /* MARQUEE ANIMATION CSS */
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            width: 100%;
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 4rem; /* Spacing between logos */
+            width: max-content;
+            /* 40s duration for smooth, slow scroll. Adjust as needed. */
+            animation: scroll-left 40s linear infinite; 
+        }
+
+        /* Pauses the scrolling when you hover over the track */
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            /* Move left by 50% (exactly one set of logos) to create seamless loop */
+            100% { transform: translateX(-50%); } 
+        }
     </style>
 </head>
 <body class="bg-black text-white font-['Space_Grotesk']">
@@ -39,7 +74,39 @@
         </p>
     </section>
 
-    <section class="py-20 px-6 max-w-7xl mx-auto border-t border-white/10">
+    <section class="py-10 border-y border-white/10 bg-white/5 overflow-hidden relative z-10">
+        <div class="max-w-full mx-auto">
+            <p class="text-center text-xs font-bold tracking-[0.3em] text-gray-500 mb-8">TRUSTED BY GIANTS</p>
+            
+            <div class="marquee-container fade-sides">
+                <div class="marquee-track items-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Unilever.svg/1024px-Unilever.svg.png" class="h-12 w-auto brand-logo" alt="Unilever">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/DStv_Logo_2012.svg/1200px-DStv_Logo_2012.svg.png" class="h-10 w-auto brand-logo" alt="DStv">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" class="h-8 w-auto brand-logo" alt="Google">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Coca-Cola_logo.svg" class="h-10 w-auto brand-logo" alt="Coca Cola">
+                    <div class="brand-logo text-2xl font-bold tracking-tighter">Britam</div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_Bélo.svg" class="h-10 w-auto brand-logo" alt="Airbnb">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" class="h-8 w-auto brand-logo" alt="TikTok">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg" class="h-12 w-auto brand-logo" alt="Canva">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" class="h-10 w-auto brand-logo" alt="Instagram">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Heineken_logo_black.svg" class="h-12 w-auto brand-logo" alt="Heineken">
+
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Unilever.svg/1024px-Unilever.svg.png" class="h-12 w-auto brand-logo" alt="Unilever">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/DStv_Logo_2012.svg/1200px-DStv_Logo_2012.svg.png" class="h-10 w-auto brand-logo" alt="DStv">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" class="h-8 w-auto brand-logo" alt="Google">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Coca-Cola_logo.svg" class="h-10 w-auto brand-logo" alt="Coca Cola">
+                    <div class="brand-logo text-2xl font-bold tracking-tighter">Britam</div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_Bélo.svg" class="h-10 w-auto brand-logo" alt="Airbnb">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" class="h-8 w-auto brand-logo" alt="TikTok">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg" class="h-12 w-auto brand-logo" alt="Canva">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" class="h-10 w-auto brand-logo" alt="Instagram">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Heineken_logo_black.svg" class="h-12 w-auto brand-logo" alt="Heineken">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 max-w-7xl mx-auto">
         <div class="grid md:grid-cols-2 gap-16 items-center">
             
             <div>
@@ -144,15 +211,15 @@
         </div>
     </section>
 
-    <footer class="py-20 text-center relative z-10 border-t border-white/10 bg-black">
-        <h2 class="text-4xl font-bold opacity-50 mb-8 tracking-widest">CONTACT US</h2>
+    <footer class="py-8 text-center relative z-10 border-t border-white/10 bg-black">
+        <h2 class="text-xl font-bold opacity-50 mb-4 tracking-widest">CONTACT US</h2>
         
-        <div class="mb-10 space-y-2 text-gray-400 font-light">
+        <div class="mb-6 space-y-1 text-sm text-gray-400 font-light">
             <p><i class="fas fa-envelope mr-2"></i> hatuainnovationstudio@gmail.com</p>
-            <p><i class="fas fa-phone mr-2"></i> +254748276265</p>
+            <p><i class="fas fa-phone mr-2"></i> +254 700 000 000</p>
         </div>
 
-        <div class="flex justify-center gap-8 mb-12 text-3xl">
+        <div class="flex justify-center gap-6 mb-6 text-2xl">
             <a href="https://instagram.com" target="_blank" class="text-gray-600 hover:text-pink-500 transition duration-300 transform hover:-translate-y-2"><i class="fab fa-instagram"></i></a>
             <a href="https://facebook.com" target="_blank" class="text-gray-600 hover:text-blue-600 transition duration-300 transform hover:-translate-y-2"><i class="fab fa-facebook"></i></a>
             <a href="https://tiktok.com" target="_blank" class="text-gray-600 hover:text-white transition duration-300 transform hover:-translate-y-2"><i class="fab fa-tiktok"></i></a>
@@ -160,7 +227,7 @@
             <a href="https://wa.me/254700000000" target="_blank" class="text-gray-600 hover:text-green-500 transition duration-300 transform hover:-translate-y-2"><i class="fab fa-whatsapp"></i></a>
         </div>
 
-        <p class="text-xs text-gray-700 tracking-[0.2em]">© 2025 HATUA INNOVATION STUDIO. ALL RIGHTS RESERVED.</p>
+        <p class="text-[10px] text-gray-700 tracking-[0.2em]">© 2025 HATUA INNOVATION STUDIO. ALL RIGHTS RESERVED.</p>
     </footer>
 
     <script>
