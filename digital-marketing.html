@@ -2,124 +2,171 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Marketing | Hatua</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    
     <style>
-        /* Green Theme for Money/Growth */
-        :root { --accent: #22c55e; }
+        /* Green Theme */
         .hero-glow { background: radial-gradient(circle at 50% 50%, rgba(34, 197, 94, 0.15), transparent 70%); }
-        .check-list li { margin-bottom: 10px; display: flex; align-items: center; }
-        .check-list i { color: var(--accent); margin-right: 10px; }
     </style>
 </head>
-<body>
-
-    <nav class="p-8 flex justify-between items-center relative z-10">
-        <a href="marketing.html" class="text-xs font-bold tracking-widest border border-white/20 px-4 py-2 rounded-full hover:bg-white hover:text-black transition">
-            ← BACK TO SERVICES
-        </a>
-        <a href="index.html"><img src="logo.png" class="h-10 md:h-12 w-auto object-contain"></a>
+<body class="bg-black text-white font-['Space_Grotesk']">
+    
+    <nav class="flex justify-between items-center px-8 py-4 fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <a href="marketing.html" class="border border-white/20 px-4 py-2 rounded-full text-xs font-bold hover:bg-white hover:text-black transition">← BACK</a>
+        <img src="logo.png" class="h-16 md:h-20 w-auto object-contain hover:opacity-80 transition">
     </nav>
 
-    <section class="py-20 px-6 text-center hero-glow">
-        <span class="text-green-500 font-bold tracking-widest text-xs border border-green-500/30 px-3 py-1 rounded-full mb-4 inline-block">SERVICE DEEP DIVE</span>
+    <header class="text-center pt-40 pb-10 px-4 hero-glow">
         <h1 class="text-5xl md:text-7xl font-bold mb-6">THE MONEY <span class="text-green-500">PRINTER</span></h1>
-        <p class="text-gray-400 max-w-2xl mx-auto text-lg">
-            Stop posting and praying. We build data-driven funnels that turn strangers into paying customers using Google, Facebook, and Instagram Ads.
+        <p class="text-gray-400 max-w-xl mx-auto text-lg">
+            Stop posting and praying. We build data-driven funnels that turn strangers into paying customers using Google and Meta Ads.
         </p>
-    </section>
+    </header>
 
-    <section class="px-6 md:px-20 pb-20">
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="glass-card p-8 border-t-2 border-green-500">
-                <i class="fab fa-google text-4xl text-green-500 mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">Google Ads (PPC)</h3>
-                <p class="text-gray-400 text-sm">We capture people actively searching for your product. "Buy shoes Nairobi" -> Your Website.</p>
-            </div>
-            <div class="glass-card p-8 border-t-2 border-green-500">
-                <i class="fab fa-facebook text-4xl text-green-500 mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">Social Targeting</h3>
-                <p class="text-gray-400 text-sm">We target users based on behavior. We find people who *love* what you sell before they even search for it.</p>
-            </div>
-            <div class="glass-card p-8 border-t-2 border-green-500">
-                <i class="fas fa-chart-line text-4xl text-green-500 mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">Retargeting</h3>
-                <p class="text-gray-400 text-sm">98% of people leave without buying. We show them ads again (and again) until they come back.</p>
-            </div>
+    <section class="py-10 border-y border-white/10 bg-white/5 mb-20">
+        <div class="flex justify-center gap-8 md:gap-16 text-4xl md:text-5xl text-gray-500">
+            <i class="fab fa-google hover:text-white transition cursor-pointer" title="Google Ads"></i>
+            <i class="fab fa-facebook hover:text-blue-600 transition cursor-pointer" title="Meta Ads"></i>
+            <i class="fab fa-instagram hover:text-pink-500 transition cursor-pointer" title="Instagram Ads"></i>
+            <i class="fas fa-chart-line hover:text-green-500 transition cursor-pointer" title="Analytics"></i>
         </div>
     </section>
 
-    <section class="py-20 bg-white/5 border-y border-white/10">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12">INVESTMENT PACKAGES</h2>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass-card p-8 rounded-2xl relative">
-                    <h3 class="text-xl font-bold text-gray-400">STARTER</h3>
-                    <div class="text-3xl font-bold my-4">Ksh 35,000 <span class="text-sm text-gray-500 font-normal">/month</span></div>
-                    <ul class="text-sm text-gray-300 check-list mb-8">
-                        <li><i class="fas fa-check"></i> Meta Ads (FB + Insta)</li>
-                        <li><i class="fas fa-check"></i> 1 Campaign Setup</li>
-                        <li><i class="fas fa-check"></i> Monthly Report</li>
-                        <li><i class="fas fa-times text-red-500"></i> Google Ads</li>
-                    </ul>
-                    <a href="#book" class="block w-full py-3 border border-white/20 text-center hover:bg-white hover:text-black transition">CHOOSE STARTER</a>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl relative border border-green-500 shadow-[0_0_30px_rgba(34,197,94,0.2)]">
-                    <div class="absolute top-0 right-0 bg-green-500 text-black text-xs font-bold px-3 py-1">MOST POPULAR</div>
-                    <h3 class="text-xl font-bold text-green-400">GROWTH</h3>
-                    <div class="text-3xl font-bold my-4">Ksh 65,000 <span class="text-sm text-gray-500 font-normal">/month</span></div>
-                    <ul class="text-sm text-gray-300 check-list mb-8">
-                        <li><i class="fas fa-check"></i> Meta Ads + Google Ads</li>
-                        <li><i class="fas fa-check"></i> 3 Campaign Setups</li>
-                        <li><i class="fas fa-check"></i> Bi-Weekly Reports</li>
-                        <li><i class="fas fa-check"></i> Ad Creative Design</li>
-                    </ul>
-                    <a href="#book" class="block w-full py-3 bg-green-500 text-black font-bold text-center hover:scale-105 transition">CHOOSE GROWTH</a>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl relative">
-                    <h3 class="text-xl font-bold text-gray-400">DOMINATION</h3>
-                    <div class="text-3xl font-bold my-4">Ksh 120,000+ <span class="text-sm text-gray-500 font-normal">/month</span></div>
-                    <ul class="text-sm text-gray-300 check-list mb-8">
-                        <li><i class="fas fa-check"></i> Full Funnel Strategy</li>
-                        <li><i class="fas fa-check"></i> Unlimited Campaigns</li>
-                        <li><i class="fas fa-check"></i> Weekly Meetings</li>
-                        <li><i class="fas fa-check"></i> SEO & Blog Content</li>
-                    </ul>
-                    <a href="#book" class="block w-full py-3 border border-white/20 text-center hover:bg-white hover:text-black transition">CONTACT US</a>
-                </div>
-            </div>
-            <p class="text-center text-gray-500 text-xs mt-8">* Ad spend budget (paid to Google/Facebook) is charged separately by the platforms.</p>
-        </div>
-    </section>
-
-    <section id="book" class="py-20 px-6 max-w-2xl mx-auto">
-        <div class="text-center mb-10">
-            <h2 class="text-3xl font-bold">READY TO SCALE?</h2>
-            <p class="text-gray-400">Fill this out, and we'll schedule a strategy call.</p>
+    <section class="max-w-7xl mx-auto px-6 pb-20">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">OUR STRATEGY</h2>
+            <p class="text-gray-400">We don't guess. We target.</p>
         </div>
         
-        <form name="ads-inquiry" method="POST" data-netlify="true" class="space-y-4">
-    <input type="hidden" name="form-name" value="ads-inquiry" />
+        <div class="grid md:grid-cols-2 gap-8">
+            
+            <div class="glass-card p-8 rounded-xl flex gap-6 items-start border-l-4 border-green-500 hover:bg-white/5 transition">
+                <div class="text-green-500 text-3xl mt-1"><i class="fab fa-google"></i></div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Google Ads (PPC)</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        We capture people actively searching for your product. "Buy shoes Nairobi" -> Your Website. High intent, high conversion.
+                    </p>
+                </div>
+            </div>
 
-    <input type="text" name="name" placeholder="Your Name" class="w-full bg-transparent border-b border-white/30 p-3 text-white outline-none focus:border-green-500 transition" required>
-    <input type="email" name="email" placeholder="Business Email" class="w-full bg-transparent border-b border-white/30 p-3 text-white outline-none focus:border-green-500 transition" required>
-    <select name="package" class="w-full bg-transparent border-b border-white/30 p-3 text-white outline-none focus:border-green-500 transition">
-        <option class="bg-black" value="starter">Starter Package (35k)</option>
-        <option class="bg-black" value="growth">Growth Package (65k)</option>
-        <option class="bg-black" value="domination">Domination Package (120k+)</option>
-    </select>
-    
-    <button type="submit" class="w-full py-4 bg-green-500 hover:bg-green-400 text-black font-bold tracking-widest mt-4">START CAMPAIGN</button>
-</form>
+            <div class="glass-card p-8 rounded-xl flex gap-6 items-start border-l-4 border-green-500 hover:bg-white/5 transition">
+                <div class="text-green-500 text-3xl mt-1"><i class="fab fa-facebook"></i></div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Social Targeting</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        We target users based on behavior. We find people who *love* what you sell before they even search for it on FB & IG.
+                    </p>
+                </div>
+            </div>
+
+            <div class="glass-card p-8 rounded-xl flex gap-6 items-start border-l-4 border-green-500 hover:bg-white/5 transition">
+                <div class="text-green-500 text-3xl mt-1"><i class="fas fa-magnet"></i></div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Retargeting</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        98% of people leave without buying. We show them ads again (and again) until they come back and checkout.
+                    </p>
+                </div>
+            </div>
+
+            <div class="glass-card p-8 rounded-xl flex gap-6 items-start border-l-4 border-green-500 hover:bg-white/5 transition">
+                <div class="text-green-500 text-3xl mt-1"><i class="fas fa-chart-pie"></i></div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Analytics & ROI</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        We track every shilling. You get a clear report showing exactly how much you spent and how much you made.
+                    </p>
+                </div>
+            </div>
+
+        </div>
     </section>
+
+    <section class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8 pb-20 border-t border-white/10 pt-10">
+        <div class="col-span-3 text-center mb-8">
+            <h2 class="text-3xl font-bold">MANAGEMENT FEES</h2>
+            <p class="text-gray-500 text-sm mt-2">*Ad budget is paid directly to Google/Meta</p>
+        </div>
+
+        <div class="glass-card p-8 border-t-2 border-green-500">
+            <h3 class="text-2xl font-bold mb-2">Starter</h3>
+            <div class="text-3xl font-bold text-green-500 mb-4">Ksh 35,000 <span class="text-sm text-white">/mo</span></div>
+            <p class="text-xs text-gray-500 mb-4 uppercase tracking-widest">Meta Only</p>
+            <ul class="text-sm text-gray-400 space-y-3 mb-8">
+                <li>• FB & Instagram Ads</li>
+                <li>• 1 Campaign Setup</li>
+                <li>• Weekly Optimization</li>
+                <li>• Monthly Report</li>
+            </ul>
+            <a href="#contact" class="block w-full py-3 border border-green-500 text-center text-green-500 hover:bg-green-500 hover:text-black font-bold transition">CHOOSE STARTER</a>
+        </div>
+
+        <div class="glass-card p-8 border-t-2 border-green-500 bg-green-500/10">
+            <div class="absolute top-0 right-0 bg-green-500 text-black text-xs font-bold px-3 py-1">MOST POPULAR</div>
+            <h3 class="text-2xl font-bold mb-2">Growth</h3>
+            <div class="text-3xl font-bold text-green-500 mb-4">Ksh 65,000 <span class="text-sm text-white">/mo</span></div>
+            <p class="text-xs text-gray-300 mb-4 uppercase tracking-widest">Meta + Google</p>
+            <ul class="text-sm text-gray-300 space-y-3 mb-8">
+                <li>• <strong>Google Ads + Social</strong></li>
+                <li>• 3 Campaign Setups</li>
+                <li>• Ad Creative Design</li>
+                <li>• Bi-Weekly Reports</li>
+            </ul>
+            <a href="#contact" class="block w-full py-3 bg-green-500 text-center text-black font-bold hover:bg-white transition">CHOOSE GROWTH</a>
+        </div>
+
+        <div class="glass-card p-8 border-t-2 border-green-500">
+            <h3 class="text-2xl font-bold mb-2">Domination</h3>
+            <div class="text-3xl font-bold text-green-500 mb-4">Ksh 120,000+</div>
+            <p class="text-xs text-gray-500 mb-4 uppercase tracking-widest">Full Funnel</p>
+            <ul class="text-sm text-gray-400 space-y-3 mb-8">
+                <li>• Unlimited Campaigns</li>
+                <li>• Full Funnel Strategy</li>
+                <li>• SEO & Blog Content</li>
+                <li>• Weekly Meetings</li>
+            </ul>
+            <a href="#contact" class="block w-full py-3 border border-green-500 text-center text-green-500 hover:bg-green-500 hover:text-black font-bold transition">CONTACT US</a>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 text-center border-t border-white/10">
+        <h2 class="text-3xl font-bold mb-6">Start Scaling.</h2>
+        
+        <form name="ads-inquiry" method="POST" data-netlify="true" class="max-w-md mx-auto space-y-4">
+            <input type="hidden" name="form-name" value="ads-inquiry" />
+
+            <input type="text" name="name" placeholder="Your Name" class="w-full bg-transparent border-b border-green-500 p-2 outline-none text-white focus:border-white transition" required>
+            <input type="email" name="email" placeholder="Business Email" class="w-full bg-transparent border-b border-green-500 p-2 outline-none text-white focus:border-white transition" required>
+            <select name="package" class="w-full bg-transparent border-b border-green-500 p-2 outline-none text-gray-400 focus:border-white transition">
+                <option class="bg-black">Choose a Package</option>
+                <option class="bg-black" value="starter">Starter Package (35k)</option>
+                <option class="bg-black" value="growth">Growth Package (65k)</option>
+                <option class="bg-black" value="domination">Domination Package (120k+)</option>
+            </select>
+            
+            <button type="submit" class="w-full py-3 bg-green-500 text-black font-bold mt-4 hover:bg-white transition">START CAMPAIGN</button>
+        </form>
+    </section>
+
+    <footer class="py-8 text-center relative z-10 border-t border-white/10 bg-black">
+        <h2 class="text-xl font-bold opacity-50 mb-4 tracking-widest">CONTACT US</h2>
+        <div class="mb-6 space-y-1 text-sm text-gray-400 font-light">
+            <p><i class="fas fa-envelope mr-2"></i> hatuainnovationstudio@gmail.com</p>
+            <p><i class="fas fa-phone mr-2"></i> +254 700 000 000</p>
+        </div>
+        <div class="flex justify-center gap-6 mb-6 text-2xl">
+            <a href="https://instagram.com" target="_blank" class="text-gray-600 hover:text-pink-500 transition duration-300"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" class="text-gray-600 hover:text-blue-600 transition duration-300"><i class="fab fa-facebook"></i></a>
+            <a href="https://tiktok.com" target="_blank" class="text-gray-600 hover:text-white transition duration-300"><i class="fab fa-tiktok"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="text-gray-600 hover:text-blue-400 transition duration-300"><i class="fab fa-linkedin"></i></a>
+            <a href="https://wa.me/254700000000" target="_blank" class="text-gray-600 hover:text-green-500 transition duration-300"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p class="text-[10px] text-gray-700 tracking-[0.2em]">© 2025 HATUA INNOVATION STUDIO.</p>
+    </footer>
 
     <script src="main.js"></script>
 </body>

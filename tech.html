@@ -2,158 +2,185 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Social Media | Hatua</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hatua | Tech Division</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-</head>
-<body class="bg-black text-white font-['Space_Grotesk']">
     
-    <nav class="flex justify-between items-center px-8 py-4 fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
-        <a href="marketing.html" class="border border-white/20 px-4 py-2 rounded-full text-xs font-bold hover:bg-white hover:text-black transition">← BACK</a>
-        <img src="logo.png" class="h-10">
+    <style>
+        /* Matrix Theme Overrides */
+        body { background: #000; color: #0f0; font-family: 'JetBrains Mono', monospace; overflow-x: hidden; }
+        
+        #matrix-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.25; }
+        
+        .terminal-card { border: 1px solid #004400; background: rgba(0, 20, 0, 0.8); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        .terminal-card:hover { border-color: #0f0; box-shadow: 0 0 25px rgba(0, 255, 0, 0.2); transform: translateY(-5px); }
+        .terminal-card:hover h3 { text-shadow: 2px 0 #fff; }
+        
+        .blinking-cursor::after { content: '█'; animation: blink 1s infinite; color: #0f0; margin-left: 5px; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        
+        /* Matrix Form Styles */
+        input, textarea, select { background: #001100; border: 1px solid #004400; color: #0f0; width: 100%; padding: 15px; font-family: 'JetBrains Mono', monospace; margin-bottom: 15px; outline: none; }
+        input:focus, textarea:focus, select:focus { border-color: #0f0; box-shadow: 0 0 10px rgba(0,255,0,0.3); }
+        .sys-badge { background: #003300; color: #0f0; padding: 2px 8px; font-size: 10px; border: 1px solid #006600; display: inline-block; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <canvas id="matrix-bg"></canvas>
+
+    <nav class="flex justify-between items-center px-8 py-4 fixed w-full z-50 bg-black/90 backdrop-blur-md border-b border-green-900/50">
+        <a href="index.html" class="text-xs hover:text-white transition decoration-green-500 underline decoration-dashed underline-offset-4">[&lt; ROOT DIRECTORY]</a>
+        <a href="index.html">
+            <img src="logo.png" class="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition duration-500">
+        </a>
     </nav>
 
-    <header class="text-center pt-40 pb-20 px-4">
-        <h1 class="text-5xl md:text-7xl font-bold mb-6">THE <span class="text-pink-500">VIBE CHECK</span></h1>
-        <p class="text-gray-400 max-w-xl mx-auto text-lg">
-            We don't just post pictures. We build **Communities**. We handle the strategy, the engagement, and the growth so you can focus on running your business.
-        </p>
-    </header>
-
-    <section class="py-10 border-y border-white/10 bg-white/5 mb-20">
-        <div class="flex justify-center gap-8 md:gap-16 text-4xl md:text-5xl text-gray-500">
-            <i class="fab fa-instagram hover:text-pink-500 transition cursor-pointer"></i>
-            <i class="fab fa-facebook hover:text-blue-600 transition cursor-pointer"></i>
-            <i class="fab fa-tiktok hover:text-white transition cursor-pointer"></i>
-            <i class="fab fa-linkedin hover:text-blue-400 transition cursor-pointer"></i>
-            <i class="fab fa-twitter hover:text-white transition cursor-pointer"></i>
+    <section class="min-h-[60vh] flex items-center px-6 md:px-20 relative z-10 pt-40">
+        <div class="max-w-4xl">
+            <p class="text-xs text-green-700 mb-4">>> SYSTEM_READY...</p>
+            <h1 class="text-4xl md:text-7xl font-bold mb-6 text-white blinking-cursor">
+                ARCHITECTING <br> THE MATRIX
+            </h1>
+            <p class="text-green-500 text-lg md:text-xl max-w-2xl leading-relaxed">
+                >> We don't just write code. We build digital fortresses. From high-speed web apps to bulletproof security, we speak the language of the future.
+            </p>
         </div>
     </section>
 
-    <section class="max-w-7xl mx-auto px-6 pb-20">
-        <h2 class="text-3xl font-bold text-center mb-12">WHAT WE ACTUALLY DO</h2>
-        
-        <div class="grid md:grid-cols-2 gap-8">
+    <section class="px-6 md:px-20 py-20 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="terminal-card p-8 group">
+                <span class="sys-badge">MODULE_01</span>
+                <h3 class="text-2xl font-bold text-white mb-3">> The Digital HQ</h3>
+                <h4 class="text-xs text-green-700 mb-4 uppercase tracking-widest">Web Development</h4>
+                <p class="text-sm text-green-400/80 leading-relaxed mb-4">
+                    Your website is your 24/7 salesman. We build lightning-fast sites that convert.
+                </p>
+                <div class="text-xs text-green-800 font-bold border-t border-green-900 pt-4 mt-2">STACK: REACT • NEXT.JS</div>
+            </div>
+
+            <div class="terminal-card p-8 group">
+                <span class="sys-badge">MODULE_02</span>
+                <h3 class="text-2xl font-bold text-white mb-3">> Pocket Power</h3>
+                <h4 class="text-xs text-green-700 mb-4 uppercase tracking-widest">App Development</h4>
+                <p class="text-sm text-green-400/80 leading-relaxed mb-4">
+                    iOS or Android. We build smooth apps that users actually enjoy scrolling through.
+                </p>
+                <div class="text-xs text-green-800 font-bold border-t border-green-900 pt-4 mt-2">STACK: FLUTTER • NATIVE</div>
+            </div>
+
+            <div class="terminal-card p-8 group">
+                <span class="sys-badge">MODULE_03</span>
+                <h3 class="text-2xl font-bold text-white mb-3">> The Translator</h3>
+                <h4 class="text-xs text-green-700 mb-4 uppercase tracking-widest">API Integration</h4>
+                <p class="text-sm text-green-400/80 leading-relaxed mb-4">
+                    We build bridges between your CRM, Payments, and databases so data flows like water.
+                </p>
+                <div class="text-xs text-green-800 font-bold border-t border-green-900 pt-4 mt-2">STACK: REST • GRAPHQL</div>
+            </div>
+
+            <div class="terminal-card p-8 group">
+                <span class="sys-badge">MODULE_04</span>
+                <h3 class="text-2xl font-bold text-white mb-3">> Infinite Scale</h3>
+                <h4 class="text-xs text-green-700 mb-4 uppercase tracking-widest">Cloud Infrastructure</h4>
+                <p class="text-sm text-green-400/80 leading-relaxed mb-4">
+                    Prepare for virality. We set up servers on AWS/Azure so your site never crashes.
+                </p>
+                <div class="text-xs text-green-800 font-bold border-t border-green-900 pt-4 mt-2">STACK: AWS • DOCKER</div>
+            </div>
+
+            <div class="terminal-card p-8 group">
+                <span class="sys-badge">MODULE_05</span>
+                <h3 class="text-2xl font-bold text-white mb-3">> Iron Dome</h3>
+                <h4 class="text-xs text-green-700 mb-4 uppercase tracking-widest">Cybersecurity</h4>
+                <p class="text-sm text-green-400/80 leading-relaxed mb-4">
+                    We lock your doors. Pentesting and encryption to keep the hackers out.
+                </p>
+                <div class="text-xs text-green-800 font-bold border-t border-green-900 pt-4 mt-2">STACK: SSL • AUDITS</div>
+            </div>
+
+            <div class="terminal-card p-8 group">
+                <span class="sys-badge">MODULE_06</span>
+                <h3 class="text-2xl font-bold text-white mb-3">> Crystal Ball</h3>
+                <h4 class="text-xs text-green-700 mb-4 uppercase tracking-widest">Data Analytics</h4>
+                <p class="text-sm text-green-400/80 leading-relaxed mb-4">
+                    Stop guessing. We turn raw data into dashboards that show you how to make money.
+                </p>
+                <div class="text-xs text-green-800 font-bold border-t border-green-900 pt-4 mt-2">STACK: PYTHON • SQL</div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-20 px-6 md:px-20 relative z-10">
+        <div class="max-w-4xl mx-auto terminal-card p-10">
+            <h2 class="text-3xl font-bold text-white mb-2">> INITIALIZE_CONTACT</h2>
             
-            <div class="glass-card p-8 rounded-xl flex gap-6 items-start hover:border-pink-500 transition">
-                <div class="bg-pink-500/20 p-4 rounded-full text-pink-500 text-2xl">
-                    <i class="fas fa-pen-fancy"></i>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-2">Content Creation & Design</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        We design high-end graphics and write captions that stop the scroll. No more blurry photos or boring text. We make your grid look aesthetic and professional.
-                    </p>
-                </div>
-            </div>
-
-            <div class="glass-card p-8 rounded-xl flex gap-6 items-start hover:border-pink-500 transition">
-                <div class="bg-pink-500/20 p-4 rounded-full text-pink-500 text-2xl">
-                    <i class="fas fa-video"></i>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-2">Reels & Video Production</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Video is king. We script, edit, and produce trendy Reels and TikToks that the algorithm loves. From transitions to trending audio, we handle it all.
-                    </p>
-                </div>
-            </div>
-
-            <div class="glass-card p-8 rounded-xl flex gap-6 items-start hover:border-pink-500 transition">
-                <div class="bg-pink-500/20 p-4 rounded-full text-pink-500 text-2xl">
-                    <i class="fas fa-comments"></i>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-2">Community Management</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        We reply to comments, answer DMs, and engage with your followers so you never miss a lead. We act as your brand's voice, 24/7.
-                    </p>
-                </div>
-            </div>
-
-            <div class="glass-card p-8 rounded-xl flex gap-6 items-start hover:border-pink-500 transition">
-                <div class="bg-pink-500/20 p-4 rounded-full text-pink-500 text-2xl">
-                    <i class="fas fa-chess-knight"></i>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-2">Strategy & Analytics</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        We don't guess. We look at the data. We track growth, engagement rates, and best posting times to ensure every post performs better than the last.
-                    </p>
-                </div>
-            </div>
+            <form name="tech-inquiry" method="POST" data-netlify="true" class="space-y-4">
+                <input type="hidden" name="form-name" value="tech-inquiry" />
+                
+                <input type="text" name="name" placeholder="'Enter Name'" required>
+                <input type="email" name="email" placeholder="'email@server.com'" required>
+                <select name="service">
+                    <option>Web Development</option>
+                    <option>App Development</option>
+                    <option>Cloud Infrastructure</option>
+                    <option>Cybersecurity</option>
+                </select>
+                <textarea name="message" rows="4" placeholder="// Describe system requirements..."></textarea>
+                
+                <button type="submit" class="w-full py-4 bg-green-700 text-black font-bold hover:bg-green-500 transition text-lg">> EXECUTE_PROGRAM</button>
+            </form>
 
         </div>
     </section>
 
-    <section class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8 pb-20">
-        <div class="col-span-3 text-center mb-8">
-            <h2 class="text-3xl font-bold">MONTHLY PACKAGES</h2>
-            <p class="text-gray-500 text-sm mt-2">Choose the speed you want to grow.</p>
+    <footer class="py-8 text-center relative z-10 border-t border-green-900 bg-black">
+        <h2 class="text-xl font-bold opacity-50 mb-4 tracking-widest text-green-700">CONTACT US</h2>
+        
+        <div class="mb-6 space-y-1 text-sm text-green-600 font-light">
+            <p><i class="fas fa-envelope mr-2"></i> hatuainnovationstudio@gmail.com</p>
+            <p><i class="fas fa-phone mr-2"></i> +254 700 000 000</p>
         </div>
 
-        <div class="glass-card p-8 border-t-2 border-pink-500">
-            <h3 class="text-2xl font-bold mb-2">Essential</h3>
-            <div class="text-3xl font-bold text-pink-500 mb-4">Ksh 20,000 <span class="text-sm text-white">/mo</span></div>
-            <p class="text-xs text-gray-500 mb-4 uppercase tracking-widest">Consistency & Presence</p>
-            <ul class="text-sm text-gray-400 space-y-3 mb-6">
-                <li>• <strong>3 High-Quality Posts</strong> per week</li>
-                <li>• Caption Copywriting & Hashtags</li>
-                <li>• Basic Community Engagement</li>
-                <li>• Monthly Performance Report</li>
-            </ul>
-            <a href="#contact" class="block w-full py-2 border border-pink-500 text-center text-pink-500 hover:bg-pink-500 hover:text-black font-bold transition">CHOOSE</a>
+        <div class="flex justify-center gap-6 mb-6 text-2xl text-green-800">
+            <a href="https://instagram.com" target="_blank" class="hover:text-green-400 transition duration-300"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" class="hover:text-green-400 transition duration-300"><i class="fab fa-facebook"></i></a>
+            <a href="https://tiktok.com" target="_blank" class="hover:text-green-400 transition duration-300"><i class="fab fa-tiktok"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="hover:text-green-400 transition duration-300"><i class="fab fa-linkedin"></i></a>
+            <a href="https://wa.me/254700000000" target="_blank" class="hover:text-green-400 transition duration-300"><i class="fab fa-whatsapp"></i></a>
         </div>
 
-        <div class="glass-card p-8 border-t-2 border-pink-500 bg-pink-500/10">
-            <div class="absolute top-0 right-0 bg-pink-500 text-black text-xs font-bold px-3 py-1">MOST POPULAR</div>
-            <h3 class="text-2xl font-bold mb-2">Growth</h3>
-            <div class="text-3xl font-bold text-pink-500 mb-4">Ksh 40,000 <span class="text-sm text-white">/mo</span></div>
-            <p class="text-xs text-gray-500 mb-4 uppercase tracking-widest">Expansion & Strategy</p>
-            <ul class="text-sm text-gray-400 space-y-3 mb-6">
-                <li>• <strong>5 Posts</strong> per week (Static + Carousels)</li>
-                <li>• <strong>2 Reels/TikToks</strong> (Video Content)</li>
-                <li>• Full DM & Comment Management</li>
-                <li>• Story Strategy & Engagement</li>
-            </ul>
-            <a href="#contact" class="block w-full py-2 bg-pink-500 text-center text-black font-bold hover:bg-white transition">CHOOSE</a>
-        </div>
+        <p class="text-[10px] text-green-900 tracking-[0.2em]">© 2025 HATUA INNOVATION STUDIO.</p>
+    </footer>
 
-        <div class="glass-card p-8 border-t-2 border-pink-500">
-            <h3 class="text-2xl font-bold mb-2">Dominance</h3>
-            <div class="text-3xl font-bold text-pink-500 mb-4">Ksh 50,000+</div>
-            <p class="text-xs text-gray-500 mb-4 uppercase tracking-widest">Full Brand Takeover</p>
-            <ul class="text-sm text-gray-400 space-y-3 mb-6">
-                <li>• <strong>Daily Content</strong> (7 Days/Week)</li>
-                <li>• 4+ Reels & Video Production</li>
-                <li>• Influencer Outreach Strategy</li>
-                <li>• Crisis Management & PR</li>
-            </ul>
-            <a href="#contact" class="block w-full py-2 border border-pink-500 text-center text-pink-500 hover:bg-pink-500 hover:text-black font-bold transition">CHOOSE</a>
-        </div>
-    </section>
-
-    <section id="contact" class="py-20 text-center border-t border-white/10">
-        <h2 class="text-3xl font-bold mb-6">Let's Get Trending.</h2>
-        <form name="tech-inquiry" method="POST" data-netlify="true" class="space-y-4">
-    <input type="hidden" name="form-name" value="tech-inquiry" />
-    
-    <input type="text" name="name" placeholder="'Enter Name'" required>
-    <input type="email" name="email" placeholder="'email@server.com'" required>
-    <select name="service">
-        <option>Web Development</option>
-        <option>App Development</option>
-        <option>Cloud Infrastructure</option>
-        <option>Cybersecurity</option>
-    </select>
-    <textarea name="message" rows="4" placeholder="// Describe system requirements..."></textarea>
-    
-    <button type="submit" class="w-full py-4 bg-green-700 text-black font-bold hover:bg-green-500 transition text-lg">> EXECUTE_PROGRAM</button>
-</form>
-    </section>
-
+    <script>
+        const canvas = document.getElementById('matrix-bg'); const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+        const letters = "01010101HATUA_CODE_SYSTEM_X86_64"; const fontSize = 14; const columns = canvas.width / fontSize; const drops = Array(Math.floor(columns)).fill(1);
+        function draw() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)"; ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#0f0"; ctx.font = fontSize + "px 'JetBrains Mono'";
+            for (let i = 0; i < drops.length; i++) {
+                const text = letters[Math.floor(Math.random() * letters.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
+            }
+        }
+        setInterval(draw, 33);
+        window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+        
+        // Header Animation
+        if (typeof gsap !== 'undefined') {
+            gsap.from("h1", { opacity: 0, y: 50, duration: 1.5, ease: "power4.out" });
+        }
+    </script>
     <script src="main.js"></script>
 </body>
 </html>
