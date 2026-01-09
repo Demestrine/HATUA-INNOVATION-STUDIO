@@ -5,63 +5,147 @@
     <title>Branding | Hatua</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Orange Theme Glow */
+        .hero-glow { background: radial-gradient(circle at 50% 50%, rgba(249, 115, 22, 0.2), transparent 70%); }
+    </style>
 </head>
 <body class="bg-black text-white font-['Space_Grotesk']">
     
-    <nav class="flex justify-between items-center px-8 py-4">
+    <nav class="flex justify-between items-center px-8 py-4 fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
         <a href="marketing.html" class="border border-white/20 px-4 py-2 rounded-full text-xs font-bold hover:bg-white hover:text-black transition">← BACK</a>
-        <img src="logo.png" class="h-10">
+        <img src="logo.png" class="h-16 md:h-20 w-auto object-contain hover:opacity-80 transition">
     </nav>
 
-    <header class="text-center py-20 px-4">
-        <h1 class="text-5xl md:text-7xl font-bold mb-4">THE <span class="text-orange-500">FACE CARD</span></h1>
-        <p class="text-gray-400 max-w-xl mx-auto">Visual identity that never declines. Logos, fonts, and brand guidelines.</p>
+    <header class="text-center pt-40 pb-20 px-4 hero-glow">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6">THE <span class="text-orange-500">FACE CARD</span></h1>
+        <p class="text-gray-400 max-w-xl mx-auto text-lg">
+            A logo is just a sticker. A brand is a feeling. We design visual identities that make your company look expensive and trustworthy.
+        </p>
     </header>
 
-    <section class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8 pb-20">
+    <section class="max-w-7xl mx-auto px-6 pb-20">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">MORE THAN A LOGO</h2>
+            <p class="text-gray-400">We build the entire visual universe of your business.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="glass-card p-8 rounded-xl flex gap-6 items-start border-l-4 border-orange-500 hover:bg-white/5 transition">
+                <div class="text-orange-500 text-3xl mt-1"><i class="fas fa-pen-nib"></i></div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Logo Design</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        We create timeless marks that scale. From your website header to a billboard, your logo will look sharp and memorable.
+                    </p>
+                </div>
+            </div>
+            <div class="glass-card p-8 rounded-xl flex gap-6 items-start border-l-4 border-orange-500 hover:bg-white/5 transition">
+                <div class="text-orange-500 text-3xl mt-1"><i class="fas fa-palette"></i></div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Visual Identity</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Colors, typography, and patterns. We define the "rules" of your brand so everything you publish looks consistent.
+                    </p>
+                </div>
+            </div>
+            <div class="glass-card p-8 rounded-xl flex gap-6 items-start border-l-4 border-orange-500 hover:bg-white/5 transition">
+                <div class="text-orange-500 text-3xl mt-1"><i class="fas fa-book"></i></div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Brand Guidelines</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        The manual for your business. We give you a PDF guide on how to use your logo, fonts, and tone of voice correctly.
+                    </p>
+                </div>
+            </div>
+            <div class="glass-card p-8 rounded-xl flex gap-6 items-start border-l-4 border-orange-500 hover:bg-white/5 transition">
+                <div class="text-orange-500 text-3xl mt-1"><i class="fas fa-tshirt"></i></div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Company Merch</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Business cards, letterheads, staff uniforms, and vehicle branding. We apply your new look to the real world.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8 pb-20 border-t border-white/10 pt-10">
+        <div class="col-span-3 text-center mb-8">
+            <h2 class="text-3xl font-bold">IDENTITY PACKAGES</h2>
+        </div>
+
         <div class="glass-card p-8 border-t-2 border-orange-500">
             <h3 class="text-2xl font-bold mb-2">Startup Logo</h3>
             <div class="text-3xl font-bold text-orange-500 mb-4">Ksh 15,000</div>
-            <ul class="text-sm text-gray-400 space-y-2 mb-6">
+            <p class="text-xs text-gray-500 mb-6 uppercase tracking-widest">Get Started</p>
+            <ul class="text-sm text-gray-400 space-y-3 mb-8">
                 <li>• 3 Logo Concepts</li>
                 <li>• PNG, JPG, SVG Files</li>
-                <li>• 2 Revisions</li>
+                <li>• 2 Rounds of Revisions</li>
+                <li>• Transparent Backgrounds</li>
             </ul>
-            <a href="#contact" class="block w-full py-2 border border-orange-500 text-center text-orange-500 hover:bg-orange-500 hover:text-black font-bold">START</a>
+            <a href="#contact" class="block w-full py-3 border border-orange-500 text-center text-orange-500 hover:bg-orange-500 hover:text-black font-bold transition">START</a>
         </div>
 
         <div class="glass-card p-8 border-t-2 border-orange-500 bg-orange-500/10">
+            <div class="absolute top-0 right-0 bg-orange-500 text-black text-xs font-bold px-3 py-1">POPULAR</div>
             <h3 class="text-2xl font-bold mb-2">Full Identity</h3>
             <div class="text-3xl font-bold text-orange-500 mb-4">Ksh 40,000</div>
-            <ul class="text-sm text-gray-400 space-y-2 mb-6">
-                <li>• Logo Suite (Primary + Submarks)</li>
-                <li>• Color Palette & Typography</li>
+            <p class="text-xs text-gray-300 mb-6 uppercase tracking-widest">Look Professional</p>
+            <ul class="text-sm text-gray-300 space-y-3 mb-8">
+                <li>• Logo Suite (Primary + Submark)</li>
+                <li>• Color Palette & Fonts</li>
                 <li>• Business Card Design</li>
                 <li>• Brand Book PDF</li>
             </ul>
-            <a href="#contact" class="block w-full py-2 bg-orange-500 text-center text-black font-bold hover:bg-white">START</a>
+            <a href="#contact" class="block w-full py-3 bg-orange-500 text-center text-black font-bold hover:bg-white transition">START</a>
         </div>
 
         <div class="glass-card p-8 border-t-2 border-orange-500">
             <h3 class="text-2xl font-bold mb-2">Rebrand</h3>
             <div class="text-3xl font-bold text-orange-500 mb-4">Custom</div>
-            <p class="text-sm text-gray-400 mb-6">For established businesses needing a total makeover. Website, signage, packaging.</p>
-            <a href="#contact" class="block w-full py-2 border border-orange-500 text-center text-orange-500 hover:bg-orange-500 hover:text-black font-bold">INQUIRE</a>
+            <p class="text-xs text-gray-500 mb-6 uppercase tracking-widest">Total Overhaul</p>
+            <ul class="text-sm text-gray-400 space-y-3 mb-8">
+                <li>• For Established Companies</li>
+                <li>• Website UI Reskin</li>
+                <li>• Signage & Packaging</li>
+                <li>• Social Media Templates</li>
+            </ul>
+            <a href="#contact" class="block w-full py-3 border border-orange-500 text-center text-orange-500 hover:bg-orange-500 hover:text-black font-bold transition">INQUIRE</a>
         </div>
     </section>
 
     <section id="contact" class="py-20 text-center border-t border-white/10">
         <h2 class="text-3xl font-bold mb-6">Fix Your Brand.</h2>
+        
         <form name="branding-inquiry" method="POST" data-netlify="true" class="max-w-md mx-auto space-y-4">
-    <input type="hidden" name="form-name" value="branding-inquiry" />
+            <input type="hidden" name="form-name" value="branding-inquiry" />
 
-    <input type="text" name="name" placeholder="Brand Name" class="w-full bg-transparent border-b border-orange-500 p-2 outline-none text-white" required>
-    <input type="email" name="email" placeholder="Email" class="w-full bg-transparent border-b border-orange-500 p-2 outline-none text-white" required>
-    
-    <button type="submit" class="w-full py-3 bg-orange-500 text-black font-bold mt-4 hover:bg-white transition">GET BRANDED</button>
-</form>
+            <input type="text" name="name" placeholder="Brand Name" class="w-full bg-transparent border-b border-orange-500 p-2 outline-none text-white focus:border-white transition" required>
+            <input type="email" name="email" placeholder="Email" class="w-full bg-transparent border-b border-orange-500 p-2 outline-none text-white focus:border-white transition" required>
+            
+            <button type="submit" class="w-full py-3 bg-orange-500 text-black font-bold mt-4 hover:bg-white transition">GET BRANDED</button>
+        </form>
     </section>
+
+    <footer class="py-8 text-center relative z-10 border-t border-white/10 bg-black">
+        <h2 class="text-xl font-bold opacity-50 mb-4 tracking-widest">CONTACT US</h2>
+        <div class="mb-6 space-y-1 text-sm text-gray-400 font-light">
+            <p><i class="fas fa-envelope mr-2"></i> hatuainnovationstudio@gmail.com</p>
+            <p><i class="fas fa-phone mr-2"></i> +254 700 000 000</p>
+        </div>
+        <div class="flex justify-center gap-6 mb-6 text-2xl">
+            <a href="https://instagram.com" target="_blank" class="text-gray-600 hover:text-pink-500 transition duration-300"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" class="text-gray-600 hover:text-blue-600 transition duration-300"><i class="fab fa-facebook"></i></a>
+            <a href="https://tiktok.com" target="_blank" class="text-gray-600 hover:text-white transition duration-300"><i class="fab fa-tiktok"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="text-gray-600 hover:text-blue-400 transition duration-300"><i class="fab fa-linkedin"></i></a>
+            <a href="https://wa.me/254700000000" target="_blank" class="text-gray-600 hover:text-green-500 transition duration-300"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p class="text-[10px] text-gray-700 tracking-[0.2em]">© 2025 HATUA INNOVATION STUDIO.</p>
+    </footer>
 
     <script src="main.js"></script>
 </body>
