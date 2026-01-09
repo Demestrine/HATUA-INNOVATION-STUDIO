@@ -49,12 +49,15 @@
     <section class="py-20 px-4">
         <div class="max-w-3xl mx-auto blueprint-card p-10 bg-slate-900/90">
             <h2 class="text-2xl text-white mb-6">THE IDEA FORGE (CUSTOM)</h2>
-            <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-6">
-                <input type="text" name="name" class="w-full bg-black/50 border border-cyan-900 p-3 text-cyan-400 focus:border-cyan-400 focus:outline-none transition" placeholder="Project Codename">
-                <input type="email" name="email" class="w-full bg-black/50 border border-cyan-900 p-3 text-cyan-400 focus:border-cyan-400 focus:outline-none transition" placeholder="Secure Email">
-                <textarea name="message" rows="4" class="w-full bg-black/50 border border-cyan-900 p-3 text-cyan-400 focus:border-cyan-400 focus:outline-none transition" placeholder="Blueprint Specs..."></textarea>
-                <button type="submit" class="w-full py-4 bg-cyan-500 hover:bg-cyan-400 text-black font-bold tracking-[2px] transition clip-path-polygon">TRANSMIT SCHEMATICS</button>
-            </form>
+            <form name="futuretech-inquiry" method="POST" data-netlify="true" class="space-y-6">
+    <input type="hidden" name="form-name" value="futuretech-inquiry" />
+
+    <input type="text" name="name" class="w-full bg-black/50 border border-cyan-900 p-3 text-cyan-400 focus:border-cyan-400 focus:outline-none transition" placeholder="Project Codename" required>
+    <input type="email" name="email" class="w-full bg-black/50 border border-cyan-900 p-3 text-cyan-400 focus:border-cyan-400 focus:outline-none transition" placeholder="Secure Email" required>
+    <textarea name="message" rows="4" class="w-full bg-black/50 border border-cyan-900 p-3 text-cyan-400 focus:border-cyan-400 focus:outline-none transition" placeholder="Blueprint Specs..."></textarea>
+    
+    <button type="submit" class="w-full py-4 bg-cyan-500 hover:bg-cyan-400 text-black font-bold tracking-[2px] transition clip-path-polygon">TRANSMIT SCHEMATICS</button>
+</form>
         </div>
     </section>
 </body>

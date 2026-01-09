@@ -113,26 +113,22 @@ body:hover .cursor-outline {
     0% { clip: rect(64px, 9999px, 87px, 0); }
     100% { clip: rect(13px, 9999px, 14px, 0); }
 }
-/* --- FIXED NAVIGATION BAR --- */
+/* --- STATIC HEADER (Scrolls away) --- */
 nav {
-    position: fixed; /* Stays at the top */
+    /* 'absolute' places it at the top of the PAGE, not the SCREEN */
+    position: absolute !important; 
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 100; /* Stays on top of everything */
-    background: rgba(0, 0, 0, 0.85); /* Dark background */
-    backdrop-filter: blur(12px); /* Blur effect (Glass) */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-}
-
-/* Add padding to the top of pages so the Nav doesn't cover the title */
-body {
-    padding-top: 80px; 
-}
-
-/* Ensure the Hero section ignores the padding if you want it full screen */
-.h-screen {
-    margin-top: -80px;
-    padding-top: 80px;
+    z-index: 50;
+    
+    /* Make it transparent */
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    
+    /* Spacing */
+    padding-top: 20px;
+    padding-bottom: 20px;
 }

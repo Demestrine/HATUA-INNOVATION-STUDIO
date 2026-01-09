@@ -5,37 +5,167 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Hatua | The Agency</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
         .stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: url('https://www.transparenttextures.com/patterns/stardust.png'); opacity: 0.3; }
         .glass-panel { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        /* Timeline Line */
+        .timeline-line { position: absolute; left: 50%; transform: translateX(-50%); width: 2px; height: 100%; background: rgba(255,255,255,0.1); z-index: 0; }
+        @media (max-width: 768px) { .timeline-line { left: 20px; } }
     </style>
 </head>
-<body>
+<body class="bg-black text-white font-['Space_Grotesk']">
+    
     <div class="stars"></div>
 
-    <nav class="p-8 flex justify-between items-center fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
-        <a href="index.html"><img src="logo.png" class="h-10 w-auto object-contain hover:opacity-80 transition"></a>
+    <nav class="flex justify-between items-center px-8 py-4 fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <a href="index.html">
+            <img src="logo.png" class="h-16 md:h-20 w-auto object-contain hover:opacity-80 transition">
+        </a>
         <a href="index.html" class="text-xs font-bold tracking-widest hover:text-[#00f3ff] transition">CLOSE [X]</a>
     </nav>
 
-    <section class="pt-40 pb-20 px-6 text-center max-w-4xl mx-auto">
-        <p class="text-[#00f3ff] tracking-[0.3em] text-xs mb-4">ESTABLISHED 2025</p>
-        <h1 class="text-4xl md:text-7xl font-bold mb-8 leading-tight">WE ARE THE <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00f3ff] to-purple-500">ARCHITECTS</span></h1>
-        <p class="text-gray-400 text-lg leading-relaxed mb-6">Hatua Innovation Studio is not just a tech agency. We are a convergence of creative minds, software engineers, and hardware innovators.</p>
+    <section class="pt-48 pb-20 px-6 text-center max-w-5xl mx-auto">
+        <p class="text-[#00f3ff] tracking-[0.3em] text-xs mb-6 font-bold">ESTABLISHED 2025 // NAIROBI, KENYA</p>
+        <h1 class="text-4xl md:text-7xl font-bold mb-8 leading-tight hero-text">
+            WE ARE THE <br> 
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00f3ff] to-purple-500">ARCHITECTS</span> OF NEXT.
+        </h1>
+        <p class="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto hero-sub">
+            Hatua Innovation Studio is not just a tech agency. We are a convergence of creative minds, software engineers, and hardware innovators working together to build the digital infrastructure of Africa.
+        </p>
     </section>
 
-    <section class="px-6 pb-20 max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-        <div class="glass-panel p-8 hover:border-[#00f3ff] transition duration-500 group"><h3 class="text-xl font-bold mb-4">We Design</h3><p class="text-gray-400 text-sm">Creative Studio crafts brands that speak.</p></div>
-        <div class="glass-panel p-8 hover:border-purple-500 transition duration-500 group"><h3 class="text-xl font-bold mb-4">We Build</h3><p class="text-gray-400 text-sm">Tech Division builds the engine.</p></div>
-        <div class="glass-panel p-8 hover:border-pink-500 transition duration-500 group"><h3 class="text-xl font-bold mb-4">We Innovate</h3><p class="text-gray-400 text-sm">FutureTech Lab brings hardware to life.</p></div>
+    <section class="py-20 px-6 max-w-7xl mx-auto border-t border-white/10">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            
+            <div>
+                <h2 class="text-3xl font-bold mb-6 tracking-wide">THE ORIGIN STORY</h2>
+                <div class="space-y-6 text-gray-400 leading-relaxed text-lg">
+                    <p>
+                        We noticed a critical gap in the market. <strong>Creative agencies</strong> could design beautiful brands but didn't understand code. <strong>Dev shops</strong> could write complex software but lacked soul and storytelling.
+                    </p>
+                    <p>
+                        Clients were forced to hire three different companies just to launch one product. It was messy, expensive, and disjointed.
+                    </p>
+                    <p class="text-white">
+                        <strong>Hatua was built to be the bridge.</strong> We brought the artists and the engineers under one roof. We don't just build products; we build businesses. From the first line of code to the final Instagram post, we handle the entire ecosystem.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div class="glass-panel p-8 text-center rounded-xl border-t-4 border-[#00f3ff] hover:bg-white/5 transition">
+                    <div class="text-5xl font-bold text-white mb-2">50+</div>
+                    <div class="text-xs text-gray-500 tracking-widest font-bold">PROJECTS SHIPPED</div>
+                </div>
+                <div class="glass-panel p-8 text-center rounded-xl border-t-4 border-purple-500 hover:bg-white/5 transition">
+                    <div class="text-5xl font-bold text-white mb-2">4</div>
+                    <div class="text-xs text-gray-500 tracking-widest font-bold">SPECIALIZED DIVISIONS</div>
+                </div>
+                <div class="glass-panel p-8 text-center rounded-xl col-span-2 border-t-4 border-pink-500 hover:bg-white/5 transition">
+                    <div class="text-5xl font-bold text-white mb-2">100%</div>
+                    <div class="text-xs text-gray-500 tracking-widest font-bold">CLIENT SATISFACTION</div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="py-20 text-center">
-        <h2 class="text-3xl font-bold mb-8">READY TO START?</h2>
-        <a href="index.html#contact" class="px-8 py-3 bg-[#00f3ff] text-black font-bold hover:bg-white transition inline-block">GET IN TOUCH</a>
+    <section class="py-24 bg-white/5">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">THE HATUA PROTOCOL</h2>
+                <p class="text-gray-400">How we turn a vague idea into a market leader.</p>
+            </div>
+
+            <div class="relative space-y-12">
+                <div class="timeline-line"></div>
+
+                <div class="relative flex flex-col md:flex-row items-center justify-between group">
+                    <div class="md:w-5/12 w-full pl-12 md:pl-0 text-left md:text-right p-4 glass-panel rounded-xl border-r-4 md:border-r-4 md:border-l-0 border-[#00f3ff] hover:bg-black transition">
+                        <h3 class="text-xl font-bold text-[#00f3ff] mb-2">01. Discovery</h3>
+                        <p class="text-sm text-gray-400">We don't start until we understand. We audit your current brand, research your competitors, and define your goals.</p>
+                    </div>
+                    <div class="absolute left-[20px] md:left-1/2 w-4 h-4 bg-[#00f3ff] rounded-full transform -translate-x-1/2 mt-6 md:mt-0 shadow-[0_0_10px_#00f3ff]"></div>
+                    <div class="md:w-5/12 hidden md:block"></div>
+                </div>
+
+                <div class="relative flex flex-col md:flex-row items-center justify-between group">
+                    <div class="md:w-5/12 hidden md:block"></div>
+                    <div class="absolute left-[20px] md:left-1/2 w-4 h-4 bg-purple-500 rounded-full transform -translate-x-1/2 mt-6 md:mt-0 shadow-[0_0_10px_purple]"></div>
+                    <div class="md:w-5/12 w-full pl-12 md:pl-0 text-left p-4 glass-panel rounded-xl border-l-4 border-purple-500 hover:bg-black transition">
+                        <h3 class="text-xl font-bold text-purple-500 mb-2">02. Strategy</h3>
+                        <p class="text-sm text-gray-400">The Blueprint. We map out the user journey, the technology stack, and the marketing funnel before writing a single line of code.</p>
+                    </div>
+                </div>
+
+                <div class="relative flex flex-col md:flex-row items-center justify-between group">
+                    <div class="md:w-5/12 w-full pl-12 md:pl-0 text-left md:text-right p-4 glass-panel rounded-xl border-r-4 md:border-r-4 md:border-l-0 border-pink-500 hover:bg-black transition">
+                        <h3 class="text-xl font-bold text-pink-500 mb-2">03. Execution</h3>
+                        <p class="text-sm text-gray-400">The Build. Our engineers code, our designers create, and our videographers shoot. We build in sprints with weekly updates.</p>
+                    </div>
+                    <div class="absolute left-[20px] md:left-1/2 w-4 h-4 bg-pink-500 rounded-full transform -translate-x-1/2 mt-6 md:mt-0 shadow-[0_0_10px_pink]"></div>
+                    <div class="md:w-5/12 hidden md:block"></div>
+                </div>
+
+                <div class="relative flex flex-col md:flex-row items-center justify-between group">
+                    <div class="md:w-5/12 hidden md:block"></div>
+                    <div class="absolute left-[20px] md:left-1/2 w-4 h-4 bg-green-500 rounded-full transform -translate-x-1/2 mt-6 md:mt-0 shadow-[0_0_10px_green]"></div>
+                    <div class="md:w-5/12 w-full pl-12 md:pl-0 text-left p-4 glass-panel rounded-xl border-l-4 border-green-500 hover:bg-black transition">
+                        <h3 class="text-xl font-bold text-green-500 mb-2">04. Launch & Scale</h3>
+                        <p class="text-sm text-gray-400">Go Live. We deploy your project, run the ads, manage the launch, and analyze the data to optimize for growth.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <section class="py-20 px-6 max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">OUR DNA</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="glass-panel p-8 text-center hover:-translate-y-2 transition duration-300 border-b-2 border-transparent hover:border-yellow-500">
+                <i class="fas fa-bolt text-4xl text-yellow-500 mb-6"></i>
+                <h3 class="text-xl font-bold mb-3">Speed Matters</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">The market doesn't wait. We ship fast without breaking things. We believe in momentum.</p>
+            </div>
+            <div class="glass-panel p-8 text-center hover:-translate-y-2 transition duration-300 border-b-2 border-transparent hover:border-[#00f3ff]">
+                <i class="fas fa-gem text-4xl text-[#00f3ff] mb-6"></i>
+                <h3 class="text-xl font-bold mb-3">Pixel Perfection</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Good enough is not enough. We obsess over every pixel, every animation, and every line of copy.</p>
+            </div>
+            <div class="glass-panel p-8 text-center hover:-translate-y-2 transition duration-300 border-b-2 border-transparent hover:border-purple-500">
+                <i class="fas fa-eye text-4xl text-purple-500 mb-6"></i>
+                <h3 class="text-xl font-bold mb-3">Radical Transparency</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">No hidden fees. No confusing jargon. You are a partner, not just a client. We keep you in the loop.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 text-center relative z-10 border-t border-white/10 bg-black">
+        <h2 class="text-4xl font-bold opacity-50 mb-8 tracking-widest">CONTACT US</h2>
+        
+        <div class="mb-10 space-y-2 text-gray-400 font-light">
+            <p><i class="fas fa-envelope mr-2"></i> hatuainnovationstudio@gmail.com</p>
+            <p><i class="fas fa-phone mr-2"></i> +254 700 000 000</p>
+        </div>
+
+        <div class="flex justify-center gap-8 mb-12 text-3xl">
+            <a href="https://instagram.com" target="_blank" class="text-gray-600 hover:text-pink-500 transition duration-300 transform hover:-translate-y-2"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" class="text-gray-600 hover:text-blue-600 transition duration-300 transform hover:-translate-y-2"><i class="fab fa-facebook"></i></a>
+            <a href="https://tiktok.com" target="_blank" class="text-gray-600 hover:text-white transition duration-300 transform hover:-translate-y-2"><i class="fab fa-tiktok"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="text-gray-600 hover:text-blue-400 transition duration-300 transform hover:-translate-y-2"><i class="fab fa-linkedin"></i></a>
+            <a href="https://wa.me/254700000000" target="_blank" class="text-gray-600 hover:text-green-500 transition duration-300 transform hover:-translate-y-2"><i class="fab fa-whatsapp"></i></a>
+        </div>
+
+        <p class="text-xs text-gray-700 tracking-[0.2em]">© 2025 HATUA INNOVATION STUDIO. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script>
+        gsap.to(".hero-text", { opacity: 1, y: 0, duration: 1.5, ease: "power4.out" });
+        gsap.to(".hero-sub", { opacity: 1, y: 0, duration: 1.5, delay: 0.3, ease: "power4.out" });
+    </script>
 </body>
 </html>

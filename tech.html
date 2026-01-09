@@ -137,17 +137,21 @@
 
     <section id="contact" class="py-20 text-center border-t border-white/10">
         <h2 class="text-3xl font-bold mb-6">Let's Get Trending.</h2>
-        <form action="https://formspree.io/f/YOUR_ID" method="POST" class="max-w-md mx-auto space-y-4">
-            <input type="text" name="name" placeholder="Brand Name" class="w-full bg-transparent border-b border-pink-500 p-2 outline-none text-white focus:border-white transition">
-            <input type="email" name="email" placeholder="Email" class="w-full bg-transparent border-b border-pink-500 p-2 outline-none text-white focus:border-white transition">
-            <select name="package" class="w-full bg-transparent border-b border-pink-500 p-2 outline-none text-gray-400 focus:border-white transition">
-                <option class="bg-black">Choose a Package</option>
-                <option class="bg-black" value="essential">Essential (20k)</option>
-                <option class="bg-black" value="growth">Growth (40k)</option>
-                <option class="bg-black" value="dominance">Dominance (50k+)</option>
-            </select>
-            <button class="w-full py-3 bg-pink-500 text-black font-bold mt-4 hover:bg-white transition">SEND INQUIRY</button>
-        </form>
+        <form name="tech-inquiry" method="POST" data-netlify="true" class="space-y-4">
+    <input type="hidden" name="form-name" value="tech-inquiry" />
+    
+    <input type="text" name="name" placeholder="'Enter Name'" required>
+    <input type="email" name="email" placeholder="'email@server.com'" required>
+    <select name="service">
+        <option>Web Development</option>
+        <option>App Development</option>
+        <option>Cloud Infrastructure</option>
+        <option>Cybersecurity</option>
+    </select>
+    <textarea name="message" rows="4" placeholder="// Describe system requirements..."></textarea>
+    
+    <button type="submit" class="w-full py-4 bg-green-700 text-black font-bold hover:bg-green-500 transition text-lg">> EXECUTE_PROGRAM</button>
+</form>
     </section>
 
     <script src="main.js"></script>

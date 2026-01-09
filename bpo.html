@@ -116,6 +116,17 @@
 
     <section id="contact" class="py-20 text-center border-t border-white/10">
         <h2 class="text-3xl font-bold mb-6">Staff Your Team.</h2>
-        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="max-w-md mx-auto space-y-4">
-            <input type="text" name="name" placeholder="Company Name" class="w-full bg-transparent border-b border-blue-500 p-2 outline-none text-white focus:border-white transition">
-            <input type="email" name="email" placeholder="Email" class="w-full bg-transparent border-b border-blue-500 p
+        <form name="bpo-inquiry" method="POST" data-netlify="true" class="max-w-md mx-auto space-y-4">
+    <input type="hidden" name="form-name" value="bpo-inquiry" />
+
+    <input type="text" name="name" placeholder="Company Name" class="w-full bg-transparent border-b border-blue-500 p-2 outline-none text-white focus:border-white transition" required>
+    <input type="email" name="email" placeholder="Email" class="w-full bg-transparent border-b border-blue-500 p-2 outline-none text-white focus:border-white transition" required>
+    <select name="service" class="w-full bg-transparent border-b border-blue-500 p-2 outline-none text-gray-400 focus:border-white transition">
+        <option class="bg-black">Select Role</option>
+        <option class="bg-black" value="receptionist">Virtual Receptionist</option>
+        <option class="bg-black" value="sales">Sales Agent</option>
+        <option class="bg-black" value="support">Customer Support Team</option>
+    </select>
+    
+    <button type="submit" class="w-full py-3 bg-blue-500 text-black font-bold mt-4 hover:bg-white transition">REQUEST STAFF</button>
+</form>

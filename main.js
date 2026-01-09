@@ -4,24 +4,32 @@ const cursorOutline = document.querySelector('.cursor-outline');
 
 if (cursorDot && cursorOutline) {
     window.addEventListener('mousemove', (e) => {
-        cursorDot.style.left = `${e.clientX}px`;
-        cursorDot.style.top = `${e.clientY}px`;
-        
+        const posX = e.clientX;
+        const posY = e.clientY;
+
+        // Dot follows instantly
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
+
+        // Outline follows much faster now (Duration changed from 500 to 80)
         cursorOutline.animate({
-            left: `${e.clientX}px`,
-            top: `${e.clientY}px`
-        }, { duration: 500, fill: "forwards" });
+            left: `${posX}px`,
+            top: `${posY}px`
+        }, { duration: 80, fill: "forwards" });
     });
 }
 
-document.querySelectorAll('.cursor-hover').forEach(el => {
+// Hover effects for interactive elements
+document.querySelectorAll('.cursor-hover, a, button').forEach(el => {
     el.addEventListener('mouseenter', () => {
         cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
         cursorOutline.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+        cursorOutline.style.borderColor = 'rgba(255, 255, 255, 0)'; // Fade border
     });
     el.addEventListener('mouseleave', () => {
         cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
         cursorOutline.style.backgroundColor = 'transparent';
+        cursorOutline.style.borderColor = 'rgba(255, 255, 255, 0.5)'; // Restore border
     });
 });
 
@@ -37,6 +45,7 @@ if (container) {
 
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio); // Sharper stars on retina screens
     container.appendChild(renderer.domElement);
 
     const starGeo = new THREE.BufferGeometry();
@@ -64,10 +73,10 @@ if (container) {
         const positions = starGeo.attributes.position.array;
         for (let i = 0; i < starCount; i++) {
             positions[i * 3 + 2] += velocities[i];
+            
+            // Reset stars when they pass the camera
             if (positions[i * 3 + 2] > 200) {
                 positions[i * 3 + 2] = -400;
-                positions[i * 3] = (Math.random() - 0.5) * 600;
-                positions[i * 3 + 1] = (Math.random() - 0.5) * 600;
             }
         }
         starGeo.attributes.position.needsUpdate = true;
@@ -76,13 +85,15 @@ if (container) {
     }
     animate();
 
+    // Handle Window Resize
     window.addEventListener('resize', () => {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
     });
 
+    // Hero Text Intro Animation
     if (typeof gsap !== 'undefined') {
-        gsap.from("h1", { opacity: 0, y: 50, duration: 1.5, delay: 0.5, ease: "power4.out" });
+        gsap.from(".hero-text", { opacity: 0, y: 50, duration: 1.5, delay: 0.5, ease: "power4.out" });
     }
 }
