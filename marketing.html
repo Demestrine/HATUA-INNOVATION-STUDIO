@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hatua | Creative Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .blob-cont { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1; filter: blur(80px); opacity: 0.6; }
+        .blob { position: absolute; border-radius: 50%; animation: float 10s infinite ease-in-out alternate; }
+        .blob-1 { top: 10%; left: 10%; width: 500px; height: 500px; background: #ff0055; }
+        .blob-2 { bottom: 10%; right: 10%; width: 400px; height: 400px; background: #ffaa00; animation-delay: 2s; }
+        .blob-3 { top: 40%; left: 40%; width: 300px; height: 300px; background: #aa00ff; animation-delay: 4s; }
+        @keyframes float { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(30px, 50px) scale(1.1); } }
+        
+        .service-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.4s ease; position: relative; overflow: hidden; }
+        .service-card:hover { transform: translateY(-10px) scale(1.02); background: rgba(255, 255, 255, 0.08); }
+        .badge { font-size: 10px; padding: 4px 8px; border-radius: 20px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; display: inline-block; margin-bottom: 10px; }
+        input, textarea, select { background: transparent; border-bottom: 1px solid rgba(255,255,255,0.3); color: white; outline: none; width: 100%; padding: 15px 0; transition: border-color 0.3s; font-size: 1.1rem; }
+        input:focus, textarea:focus, select:focus { border-color: #ff0055; }
+    </style>
+</head>
+<body>
+
+    <div class="blob-cont">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <nav class="flex justify-between items-center px-8 py-4 fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <a href="index.html" class="text-xs font-bold tracking-widest border border-white/20 px-4 py-2 rounded-full hover:bg-white hover:text-black transition">← ESCAPE TO HUB</a>
+        <a href="index.html"><img src="logo.png" class="h-10 md:h-12 w-auto object-contain"></a>
+    </nav>
+
+    <section class="min-h-[50vh] flex flex-col justify-center px-6 md:px-20 relative z-10 text-center md:text-left pt-40">
+        <h1 class="text-5xl md:text-8xl font-bold leading-none hero-text">
+            DON'T BE <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-yellow-500">BORING.</span>
+        </h1>
+        <p class="mt-6 text-xl md:text-2xl max-w-2xl text-gray-200 opacity-0 hero-sub font-light">
+            We turn "just another company" into a cult favorite. From viral tweets to cinematic visuals, we bring the flavor.
+        </p>
+    </section>
+
+    <section class="px-6 md:px-20 py-20 bg-black/40 backdrop-blur-md">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <a href="social-media.html" class="service-card p-8 rounded-2xl group border-t-4 border-pink-500 block hover:scale-105 transition">
+                <span class="badge bg-pink-500/20 text-pink-500">The Loudspeaker</span>
+                <h3 class="text-3xl font-bold mb-3">Social Media</h3>
+                <p class="text-gray-400 mb-4">We handle the memes, comments, and DMs so you stay relevant.</p>
+                <div class="text-xs font-bold tracking-widest text-pink-400 group-hover:underline">VIEW PACKAGES →</div>
+            </a>
+
+            <a href="production.html" class="service-card p-8 rounded-2xl group border-t-4 border-yellow-500 block hover:scale-105 transition">
+                <span class="badge bg-yellow-500/20 text-yellow-500">Visual Sorcery</span>
+                <h3 class="text-3xl font-bold mb-3">Media Production</h3>
+                <p class="text-gray-400 mb-4">High-end Photography & Videography. Make your brand look expensive.</p>
+                <div class="text-xs font-bold tracking-widest text-yellow-400 group-hover:underline">VIEW GALLERY →</div>
+            </a>
+
+            <a href="digital-marketing.html" class="service-card p-8 rounded-2xl group border-t-4 border-green-500 block hover:scale-105 transition">
+                <span class="badge bg-green-500/20 text-green-500">Money Printer</span>
+                <h3 class="text-3xl font-bold mb-3">Digital Ads</h3>
+                <p class="text-gray-400 mb-4">Google & Meta ads that hunt down your ideal customers.</p>
+                <div class="text-xs font-bold tracking-widest text-green-400 group-hover:underline">VIEW ROI →</div>
+            </a>
+
+            <a href="va.html" class="service-card p-8 rounded-2xl group border-t-4 border-teal-500 block hover:scale-105 transition">
+                <span class="badge bg-teal-500/20 text-teal-500">The Support</span>
+                <h3 class="text-3xl font-bold mb-3">Virtual Assistance</h3>
+                <p class="text-gray-400 mb-4">Admin, Email, and Research. Your remote office team.</p>
+                <div class="text-xs font-bold tracking-widest text-teal-400 group-hover:underline">VIEW RATES →</div>
+            </a>
+
+            <a href="bpo.html" class="service-card p-8 rounded-2xl group border-t-4 border-blue-500 block hover:scale-105 transition">
+                <span class="badge bg-blue-500/20 text-blue-500">The Voice</span>
+                <h3 class="text-3xl font-bold mb-3">BPO & Calls</h3>
+                <p class="text-gray-400 mb-4">Call center agents for sales and support. We answer 24/7.</p>
+                <div class="text-xs font-bold tracking-widest text-blue-400 group-hover:underline">VIEW AGENTS →</div>
+            </a>
+
+            <a href="branding.html" class="service-card p-8 rounded-2xl group border-t-4 border-orange-500 block hover:scale-105 transition">
+                <span class="badge bg-orange-500/20 text-orange-500">The Face</span>
+                <h3 class="text-3xl font-bold mb-3">Branding</h3>
+                <p class="text-gray-400 mb-4">Logos, colors, and identity design that tells your story.</p>
+                <div class="text-xs font-bold tracking-widest text-orange-400 group-hover:underline">VIEW EXAMPLES →</div>
+            </a>
+
+        </div>
+    </section>
+
+    <section class="py-24 px-6 md:px-20 relative z-10">
+        <div class="bg-gradient-to-br from-gray-900 to-black border border-white/10 p-10 md:p-16 rounded-3xl">
+            <h2 class="text-4xl font-bold mb-6">LET'S MAKE MAGIC.</h2>
+            <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <input type="text" name="name" placeholder="Name" class="w-full bg-transparent border-b border-white/30 p-3 text-white outline-none focus:border-pink-500 transition" required>
+                    <input type="text" name="company" placeholder="Company" class="w-full bg-transparent border-b border-white/30 p-3 text-white outline-none focus:border-pink-500 transition">
+                </div>
+                <input type="email" name="email" placeholder="Email Address" class="w-full bg-transparent border-b border-white/30 p-3 text-white outline-none focus:border-pink-500 transition" required>
+                <select name="service" class="w-full bg-transparent border-b border-white/30 p-3 text-white outline-none focus:border-pink-500 transition">
+                    <option class="bg-black">What do you need?</option>
+                    <option class="bg-black" value="social">Social Media</option>
+                    <option class="bg-black" value="production">Media Production (Photo/Video)</option>
+                    <option class="bg-black" value="ads">Digital Marketing</option>
+                    <option class="bg-black" value="va">Virtual Assistance</option>
+                    <option class="bg-black" value="branding">Branding</option>
+                </select>
+                <textarea name="message" rows="3" placeholder="Tell us about your project..." class="w-full bg-transparent border-b border-white/30 p-3 text-white outline-none focus:border-pink-500 transition"></textarea>
+                <button type="submit" class="w-full py-4 bg-white text-black font-bold rounded-xl hover:bg-pink-500 hover:text-white transition">SEND IT 🚀</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-20 text-center relative z-10 border-t border-white/10 bg-black">
+        <h2 class="text-4xl font-bold opacity-50 mb-8 tracking-widest">CONTACT US</h2>
+        
+        <div class="mb-10 space-y-2 text-gray-400 font-light">
+            <p><i class="fas fa-envelope mr-2"></i> hatuainnovationstudio@gmail.com</p>
+            <p><i class="fas fa-phone mr-2"></i> +254 700 000 000</p>
+        </div>
+
+        <div class="flex justify-center gap-8 mb-12 text-3xl">
+            <a href="https://instagram.com" target="_blank" class="text-gray-600 hover:text-pink-500 transition duration-300 transform hover:-translate-y-2"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" class="text-gray-600 hover:text-blue-600 transition duration-300 transform hover:-translate-y-2"><i class="fab fa-facebook"></i></a>
+            <a href="https://tiktok.com" target="_blank" class="text-gray-600 hover:text-white transition duration-300 transform hover:-translate-y-2"><i class="fab fa-tiktok"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="text-gray-600 hover:text-blue-400 transition duration-300 transform hover:-translate-y-2"><i class="fab fa-linkedin"></i></a>
+            <a href="https://wa.me/254700000000" target="_blank" class="text-gray-600 hover:text-green-500 transition duration-300 transform hover:-translate-y-2"><i class="fab fa-whatsapp"></i></a>
+        </div>
+
+        <p class="text-xs text-gray-700 tracking-[0.2em]">© 2025 HATUA INNOVATION STUDIO. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script>
+        gsap.to(".hero-text", { opacity: 1, y: 0, duration: 1.5, ease: "power4.out" });
+        gsap.to(".hero-sub", { opacity: 1, y: 0, duration: 1.5, delay: 0.3, ease: "power4.out" });
+    </script>
+</body>
+</html>

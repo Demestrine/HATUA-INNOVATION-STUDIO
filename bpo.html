@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BPO & Calls | Hatua</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Blue Theme Glow */
+        .hero-glow { background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.2), transparent 70%); }
+    </style>
+</head>
+<body class="bg-black text-white font-['Space_Grotesk']">
+    
+    <nav class="flex justify-between items-center px-8 py-4 fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <a href="marketing.html" class="border border-white/20 px-4 py-2 rounded-full text-xs font-bold hover:bg-white hover:text-black transition">← BACK</a>
+        <img src="logo.png" class="h-10">
+    </nav>
+
+    <header class="text-center pt-40 pb-10 px-4 hero-glow">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6">THE <span class="text-blue-500">VOICE</span></h1>
+        <p class="text-gray-400 max-w-xl mx-auto text-lg">
+            Silence the noise. We handle your calls, close your leads, and support your customers so you can focus on building the business.
+        </p>
+    </header>
+    <section class="max-w-7xl mx-auto px-6 pb-20">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">CALL CENTER SOLUTIONS</h2>
+            <p class="text-gray-400">Professional agents representing your brand.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="glass-card p-8 rounded-xl flex gap-6 items-start border-l-4 border-blue-500 hover:bg-white/5 transition">
+                <div class="text-blue-500 text-3xl mt-1"><i class="fas fa-headset"></i></div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Inbound Support</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Never miss a call. We answer customer inquiries, resolve complaints, and provide tech support with a friendly, professional tone.
+                    </p>
+                </div>
+            </div>
+            <div class="glass-card p-8 rounded-xl flex gap-6 items-start border-l-4 border-blue-500 hover:bg-white/5 transition">
+                <div class="text-blue-500 text-3xl mt-1"><i class="fas fa-bullseye"></i></div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Outbound Sales</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Need to generate revenue? Our agents cold call leads, follow up on prospects, and close deals directly over the phone.
+                    </p>
+                </div>
+            </div>
+            <div class="glass-card p-8 rounded-xl flex gap-6 items-start border-l-4 border-blue-500 hover:bg-white/5 transition">
+                <div class="text-blue-500 text-3xl mt-1"><i class="fas fa-calendar-check"></i></div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Appointment Setting</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        We qualify your leads and book meetings straight into your calendar. You just show up and close the big deals.
+                    </p>
+                </div>
+            </div>
+            <div class="glass-card p-8 rounded-xl flex gap-6 items-start border-l-4 border-blue-500 hover:bg-white/5 transition">
+                <div class="text-blue-500 text-3xl mt-1"><i class="fas fa-database"></i></div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">CRM Management</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        We log every call, update customer details, and keep your Salesforce or HubSpot clean and organized.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8 pb-20 border-t border-white/10 pt-10">
+        <div class="col-span-3 text-center mb-8">
+            <h2 class="text-3xl font-bold">MONTHLY RATES</h2>
+        </div>
+
+        <div class="glass-card p-8 border-t-2 border-blue-500">
+            <h3 class="text-2xl font-bold mb-2">Receptionist</h3>
+            <div class="text-3xl font-bold text-blue-500 mb-4">Ksh 30,000 <span class="text-sm text-white">/mo</span></div>
+            <ul class="text-sm text-gray-400 space-y-3 mb-8">
+                <li>• Call Answering (Mon-Fri)</li>
+                <li>• Message Taking</li>
+                <li>• Basic FAQ Answers</li>
+                <li>• Weekly Report</li>
+            </ul>
+            <a href="#contact" class="block w-full py-3 border border-blue-500 text-center text-blue-500 hover:bg-blue-500 hover:text-black font-bold transition">HIRE AGENT</a>
+        </div>
+
+        <div class="glass-card p-8 border-t-2 border-blue-500 bg-blue-500/10">
+            <div class="absolute top-0 right-0 bg-blue-500 text-black text-xs font-bold px-3 py-1">MOST POPULAR</div>
+            <h3 class="text-2xl font-bold mb-2">Sales Agent</h3>
+            <div class="text-3xl font-bold text-blue-500 mb-4">Ksh 55,000 <span class="text-sm text-white">/mo</span></div>
+            <ul class="text-sm text-gray-400 space-y-3 mb-8">
+                <li>• Dedicated Sales Rep</li>
+                <li>• Cold Calling & Follow-ups</li>
+                <li>• Lead Qualification</li>
+                <li>• Closing Deals</li>
+            </ul>
+            <a href="#contact" class="block w-full py-3 bg-blue-500 text-center text-black font-bold hover:bg-white transition">HIRE AGENT</a>
+        </div>
+
+        <div class="glass-card p-8 border-t-2 border-blue-500">
+            <h3 class="text-2xl font-bold mb-2">24/7 Team</h3>
+            <div class="text-3xl font-bold text-blue-500 mb-4">Custom</div>
+            <ul class="text-sm text-gray-400 space-y-3 mb-8">
+                <li>• Round-the-clock Coverage</li>
+                <li>• 3+ Agents per shift</li>
+                <li>• Manager Included</li>
+                <li>• Multilingual Support</li>
+            </ul>
+            <a href="#contact" class="block w-full py-3 border border-blue-500 text-center text-blue-500 hover:bg-blue-500 hover:text-black font-bold transition">CONTACT US</a>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 text-center border-t border-white/10">
+        <h2 class="text-3xl font-bold mb-6">Staff Your Team.</h2>
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="max-w-md mx-auto space-y-4">
+            <input type="text" name="name" placeholder="Company Name" class="w-full bg-transparent border-b border-blue-500 p-2 outline-none text-white focus:border-white transition">
+            <input type="email" name="email" placeholder="Email" class="w-full bg-transparent border-b border-blue-500 p

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Media Production | Hatua</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Purple/Yellow Gradient for the Hybrid feel */
+        .hero-glow { background: radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.2), transparent 70%); }
+    </style>
+</head>
+<body class="bg-black text-white font-['Space_Grotesk']">
+    
+    <nav class="flex justify-between items-center px-8 py-4 fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <a href="marketing.html" class="border border-white/20 px-4 py-2 rounded-full text-xs font-bold hover:bg-white hover:text-black transition">← BACK</a>
+        <img src="logo.png" class="h-20">
+    </nav>
+
+    <header class="text-center pt-40 pb-20 px-4 hero-glow">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6">VISUAL <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-purple-500">PRODUCTION</span></h1>
+        <p class="text-gray-400 max-w-xl mx-auto text-lg">
+            A full-service production house. We combine high-end photography and cinematic video to tell your brand's story from every angle.
+        </p>
+    </header>
+
+    <section class="max-w-7xl mx-auto px-6 pb-20">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">HOW WE CREATE</h2>
+            <p class="text-gray-400">We handle the entire pipeline, so you don't have to hire separate freelancers.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="glass-card p-6 border-t-2 border-yellow-500 hover:bg-white/5 transition">
+                <i class="fas fa-lightbulb text-3xl text-yellow-500 mb-4"></i>
+                <h3 class="text-lg font-bold mb-2">Creative Direction</h3>
+                <p class="text-gray-400 text-xs leading-relaxed">Mood boards, shot lists, and location scouting. We plan the visual vibe before we even pick up a camera.</p>
+            </div>
+            <div class="glass-card p-6 border-t-2 border-yellow-500 hover:bg-white/5 transition">
+                <i class="fas fa-camera text-3xl text-yellow-500 mb-4"></i>
+                <h3 class="text-lg font-bold mb-2">Photography</h3>
+                <p class="text-gray-400 text-xs leading-relaxed">Product shoots, corporate headshots, and event coverage using full-frame high-resolution cameras.</p>
+            </div>
+            <div class="glass-card p-6 border-t-2 border-purple-500 hover:bg-white/5 transition">
+                <i class="fas fa-video text-3xl text-purple-500 mb-4"></i>
+                <h3 class="text-lg font-bold mb-2">Videography</h3>
+                <p class="text-gray-400 text-xs leading-relaxed">4K Video, Drone shots, and cinematic storytelling. From TikTok reels to TV commercials.</p>
+            </div>
+            <div class="glass-card p-6 border-t-2 border-purple-500 hover:bg-white/5 transition">
+                <i class="fas fa-photo-video text-3xl text-purple-500 mb-4"></i>
+                <h3 class="text-lg font-bold mb-2">Post-Production</h3>
+                <p class="text-gray-400 text-xs leading-relaxed">Professional retouching, color grading, sound design, and VFX to polish the final masterpiece.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8 pb-20 border-t border-white/10 pt-10">
+        <div class="col-span-3 text-center mb-8">
+            <h2 class="text-3xl font-bold">CHOOSE YOUR FORMAT</h2>
+        </div>
+
+        <div class="glass-card p-8 border-t-2 border-yellow-500">
+            <h3 class="text-2xl font-bold mb-2">Photography</h3>
+            <p class="text-sm text-gray-400 mb-4">Perfect for catalogues, websites, and profiles.</p>
+            <div class="text-2xl font-bold text-yellow-500 mb-6">Custom Quote</div>
+            <ul class="text-xs text-gray-300 space-y-3 mb-8 uppercase tracking-widest">
+                <li>• Product / Headshots</li>
+                <li>• High-End Retouching</li>
+                <li>• Online Gallery</li>
+            </ul>
+            <a href="#contact" class="block w-full py-3 border border-yellow-500 text-center text-yellow-500 hover:bg-yellow-500 hover:text-black font-bold transition">BOOK PHOTO</a>
+        </div>
+
+        <div class="glass-card p-8 border-t-2 border-white bg-white/5 relative">
+            <div class="absolute top-0 right-0 bg-white text-black text-xs font-bold px-3 py-1">MOST POPULAR</div>
+            <h3 class="text-2xl font-bold mb-2">Full Media Day</h3>
+            <p class="text-sm text-gray-400 mb-4">We shoot EVERYTHING in one day.</p>
+            <div class="text-2xl font-bold text-white mb-6">Ksh 85,000</div>
+            <ul class="text-xs text-gray-300 space-y-3 mb-8 uppercase tracking-widest">
+                <li>• <strong>Photo + Video</strong> Combo</li>
+                <li>• 20 Edited Photos</li>
+                <li>• 4 Reels/TikToks</li>
+                <li>• 1 Brand Highlight Video</li>
+            </ul>
+            <a href="#contact" class="block w-full py-3 bg-white text-black font-bold text-center hover:scale-105 transition">BOOK MEDIA DAY</a>
+        </div>
+
+        <div class="glass-card p-8 border-t-2 border-purple-500">
+            <h3 class="text-2xl font-bold mb-2">Videography</h3>
+            <p class="text-sm text-gray-400 mb-4">Commercials, Docs, and Social Clips.</p>
+            <div class="text-2xl font-bold text-purple-500 mb-6">Custom Quote</div>
+            <ul class="text-xs text-gray-300 space-y-3 mb-8 uppercase tracking-widest">
+                <li>• Script & Storyboard</li>
+                <li>• 4K Cinema Quality</li>
+                <li>• Sound Design & Color</li>
+            </ul>
+            <a href="#contact" class="block w-full py-3 border border-purple-500 text-center text-purple-500 hover:bg-purple-500 hover:text-black font-bold transition">BOOK VIDEO</a>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 text-center border-t border-white/10">
+        <h2 class="text-3xl font-bold mb-6">Let's Create.</h2>
+        <form action="https://formspree.io/f/YOUR_ID" method="POST" class="max-w-md mx-auto space-y-4">
+            <input type="text" name="name" placeholder="Brand Name" class="w-full bg-transparent border-b border-white p-2 outline-none text-white transition">
+            <input type="email" name="email" placeholder="Email" class="w-full bg-transparent border-b border-white p-2 outline-none text-white transition">
+            <select name="service" class="w-full bg-transparent border-b border-white p-2 outline-none text-gray-400 transition">
+                <option class="bg-black">Select Service</option>
+                <option class="bg-black" value="photo">Photography Only</option>
+                <option class="bg-black" value="video">Videography Only</option>
+                <option class="bg-black" value="hybrid">Full Media Day (Hybrid)</option>
+            </select>
+            <button class="w-full py-3 bg-white text-black font-bold mt-4 hover:bg-gray-200 transition">GET QUOTE</button>
+        </form>
+    </section>
+
+    <footer class="py-20 text-center relative z-10 border-t border-white/10 bg-black">
+        <div class="mb-10 space-y-2 text-gray-400 font-light">
+            <p><i class="fas fa-envelope mr-2"></i> hatuainnovationstudio@gmail.com</p>
+            <p><i class="fas fa-phone mr-2"></i> +254 700 000 000</p>
+        </div>
+        <div class="flex justify-center gap-8 mb-12 text-3xl">
+            <a href="#" class="text-gray-600 hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-600 hover:text-blue-600 transition"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-gray-600 hover:text-white transition"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="text-gray-600 hover:text-green-500 transition"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p class="text-xs text-gray-700 tracking-[0.2em]">© 2025 HATUA INNOVATION STUDIO.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

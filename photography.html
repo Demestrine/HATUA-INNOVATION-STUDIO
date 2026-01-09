@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Photography | Hatua</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Yellow Theme */
+        .hero-glow { background: radial-gradient(circle at 50% 50%, rgba(234, 179, 8, 0.15), transparent 70%); }
+        .check-list li { margin-bottom: 10px; display: flex; align-items: center; }
+        .check-list i { color: #eab308; margin-right: 10px; }
+    </style>
+</head>
+<body class="bg-black text-white font-['Space_Grotesk']">
+
+    <nav class="flex justify-between items-center px-8 py-4 fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <a href="marketing.html" class="border border-white/20 px-4 py-2 rounded-full text-xs font-bold hover:bg-white hover:text-black transition">← BACK</a>
+        <img src="logo.png" class="h-10">
+    </nav>
+
+    <section class="pt-40 pb-20 px-6 text-center hero-glow">
+        <span class="text-yellow-500 font-bold tracking-widest text-xs border border-yellow-500/30 px-3 py-1 rounded-full mb-4 inline-block">VISUAL PRODUCTION</span>
+        <h1 class="text-5xl md:text-7xl font-bold mb-6">VISUAL <span class="text-yellow-500">SORCERY</span></h1>
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+            Stop using stock photos. We shoot high-end visuals that make your brand look expensive and your products look edible.
+        </p>
+    </section>
+
+    <section class="px-6 md:px-20 pb-20">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="glass-card p-8 border-t-2 border-yellow-500 hover:bg-white/5 transition">
+                <i class="fas fa-lightbulb text-4xl text-yellow-500 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Creative Direction</h3>
+                <p class="text-gray-400 text-sm">We don't just point and shoot. We build mood boards, scout locations, and style the set to match your brand vibe perfectly.</p>
+            </div>
+            <div class="glass-card p-8 border-t-2 border-yellow-500 hover:bg-white/5 transition">
+                <i class="fas fa-camera text-4xl text-yellow-500 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">High-End Production</h3>
+                <p class="text-gray-400 text-sm">We bring the big guns. Professional lighting, full-frame cameras, and lenses that capture every detail sharp and crisp.</p>
+            </div>
+            <div class="glass-card p-8 border-t-2 border-yellow-500 hover:bg-white/5 transition">
+                <i class="fas fa-magic text-4xl text-yellow-500 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Retouching & Edits</h3>
+                <p class="text-gray-400 text-sm">The magic happens in post. We color grade, skin smooth, and remove imperfections so your photos look magazine-ready.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white/5 border-y border-white/10">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">INVESTMENT PACKAGES</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-2xl relative">
+                    <h3 class="text-xl font-bold text-gray-400">PORTRAITS</h3>
+                    <div class="text-3xl font-bold my-4 text-yellow-500">Ksh 15,000</div>
+                    <ul class="text-sm text-gray-300 check-list mb-8">
+                        <li><i class="fas fa-check"></i> 1 Hour Session</li>
+                        <li><i class="fas fa-check"></i> 10 High-Res Edits</li>
+                        <li><i class="fas fa-check"></i> 2 Outfit Changes</li>
+                        <li><i class="fas fa-check"></i> Studio or Location</li>
+                    </ul>
+                    <a href="#book" class="block w-full py-3 border border-white/20 text-center hover:bg-white hover:text-black transition">BOOK SESSION</a>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl relative border border-yellow-500 shadow-[0_0_30px_rgba(234,179,8,0.2)]">
+                    <div class="absolute top-0 right-0 bg-yellow-500 text-black text-xs font-bold px-3 py-1">MOST POPULAR</div>
+                    <h3 class="text-xl font-bold text-yellow-400">PRODUCT PACK</h3>
+                    <div class="text-3xl font-bold my-4 text-yellow-500">Ksh 40,000</div>
+                    <ul class="text-sm text-gray-300 check-list mb-8">
+                        <li><i class="fas fa-check"></i> 20 Product Shots</li>
+                        <li><i class="fas fa-check"></i> White Background + Lifestyle</li>
+                        <li><i class="fas fa-check"></i> Styling & Props Included</li>
+                        <li><i class="fas fa-check"></i> Full Commercial Rights</li>
+                    </ul>
+                    <a href="#book" class="block w-full py-3 bg-yellow-500 text-black font-bold text-center hover:scale-105 transition">CHOOSE PRODUCT</a>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl relative">
+                    <h3 class="text-xl font-bold text-gray-400">FULL EVENT</h3>
+                    <div class="text-3xl font-bold my-4 text-yellow-500">Ksh 60,000+</div>
+                    <ul class="text-sm text-gray-300 check-list mb-8">
+                        <li><i class="fas fa-check"></i> Full Day Coverage (8 Hrs)</li>
+                        <li><i class="fas fa-check"></i> Unlimited Photos</li>
+                        <li><i class="fas fa-check"></i> Drone Shots Included</li>
+                        <li><i class="fas fa-check"></i> Same-Day Highlights</li>
+                    </ul>
+                    <a href="#book" class="block w-full py-3 border border-white/20 text-center hover:bg-white hover:text-black transition">CONTACT US</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="book" class="py-20 px-6 max-w-2xl mx-auto">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold">LET'S SHOOT.</h2>
+            <p class="text-gray-400">Fill this out to schedule your session.</p>
+        </div>
+        
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-4">
+            <input type="text" name="name" placeholder="Your Name" class="w-full bg-transparent border-b border-white/30 p-3 text-white outline-none focus:border-yellow-500 transition" required>
+            <input type="email" name="email" placeholder="Email" class="w-full bg-transparent border-b border-white/30 p-3 text-white outline-none focus:border-yellow-500 transition" required>
+            <select name="package" class="w-full bg-transparent border-b border-white/30 p-3 text-white outline-none focus:border-yellow-500 transition">
+                <option class="bg-black" value="portrait">Portrait Session (15k)</option>
+                <option class="bg-black" value="product">Product Pack (40k)</option>
+                <option class="bg-black" value="event">Event Coverage (60k+)</option>
+            </select>
+            <button class="w-full py-4 bg-yellow-500 hover:bg-yellow-400 text-black font-bold tracking-widest mt-4">CONFIRM BOOKING</button>
+        </form>
+    </section>
+
+    <footer class="py-20 text-center relative z-10 border-t border-white/10 bg-black">
+        <div class="mb-10 space-y-2 text-gray-400 font-light">
+            <p><i class="fas fa-envelope mr-2"></i> hatuainnovationstudio@gmail.com</p>
+            <p><i class="fas fa-phone mr-2"></i> +254 700 000 000</p>
+        </div>
+        <div class="flex justify-center gap-8 mb-12 text-3xl">
+            <a href="#" class="text-gray-600 hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-600 hover:text-blue-600 transition"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-gray-600 hover:text-white transition"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="text-gray-600 hover:text-green-500 transition"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p class="text-xs text-gray-700 tracking-[0.2em]">© 2025 HATUA INNOVATION STUDIO.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
