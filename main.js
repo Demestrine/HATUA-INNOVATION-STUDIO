@@ -11,7 +11,7 @@ if (cursorDot && cursorOutline) {
         cursorDot.style.left = `${posX}px`;
         cursorDot.style.top = `${posY}px`;
 
-        // Outline follows fast (80ms duration)
+        // Outline follows much faster now (80ms)
         cursorOutline.animate({
             left: `${posX}px`,
             top: `${posY}px`
@@ -33,44 +33,6 @@ document.querySelectorAll('.cursor-hover, a, button').forEach(el => {
     });
 });
 
-/* --- THEME TOGGLE LOGIC (DARK / LIGHT MODE) --- */
-function toggleTheme() {
-    const body = document.body;
-    const icon = document.getElementById('theme-icon');
-    
-    // Toggle Class
-    body.classList.toggle('light-mode');
-    
-    // Change Icon & Save Preference
-    if (body.classList.contains('light-mode')) {
-        if(icon) {
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-        }
-        localStorage.setItem('theme', 'light');
-    } else {
-        if(icon) {
-            icon.classList.remove('fa-sun');
-            icon.classList.add('fa-moon');
-        }
-        localStorage.setItem('theme', 'dark');
-    }
-}
-
-// Check Local Storage on Load
-document.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme');
-    const icon = document.getElementById('theme-icon');
-    
-    if (savedTheme === 'light') {
-        document.body.classList.add('light-mode');
-        if(icon) {
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-        }
-    }
-});
-
 /* --- 3D BACKGROUND (THREE.JS) --- */
 const container = document.getElementById('webgl-container');
 
@@ -83,7 +45,7 @@ if (container) {
 
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(window.devicePixelRatio); // Sharper stars on retina screens
+    renderer.setPixelRatio(window.devicePixelRatio); // Sharper stars
     container.appendChild(renderer.domElement);
 
     const starGeo = new THREE.BufferGeometry();
@@ -111,8 +73,6 @@ if (container) {
         const positions = starGeo.attributes.position.array;
         for (let i = 0; i < starCount; i++) {
             positions[i * 3 + 2] += velocities[i];
-            
-            // Reset stars when they pass the camera
             if (positions[i * 3 + 2] > 200) {
                 positions[i * 3 + 2] = -400;
             }
