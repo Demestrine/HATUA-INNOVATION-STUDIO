@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hatua | Creative Studio</title>
+    <title>Hatua | Marketing Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
@@ -15,121 +15,131 @@
         .blob { position: absolute; border-radius: 50%; animation: float 10s infinite ease-in-out alternate; }
         .blob-1 { top: 10%; left: 10%; width: 500px; height: 500px; background: #ff0055; }
         .blob-2 { bottom: 10%; right: 10%; width: 400px; height: 400px; background: #ffaa00; animation-delay: 2s; }
-        .blob-3 { top: 40%; left: 40%; width: 300px; height: 300px; background: #aa00ff; animation-delay: 4s; }
         @keyframes float { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(30px, 50px) scale(1.1); } }
-        
-        .service-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.4s ease; position: relative; overflow: hidden; }
-        .service-card:hover { transform: translateY(-10px) scale(1.02); background: rgba(255, 255, 255, 0.08); }
-        .badge { font-size: 10px; padding: 4px 8px; border-radius: 20px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; display: inline-block; margin-bottom: 10px; }
-        input, textarea, select { background: transparent; border-bottom: 1px solid rgba(255,255,255,0.3); color: white; outline: none; width: 100%; padding: 15px 0; transition: border-color 0.3s; font-size: 1.1rem; }
-        input:focus, textarea:focus, select:focus { border-color: #ff0055; }
     </style>
 </head>
-<body>
+<body class="bg-black text-white font-['Space_Grotesk']">
 
     <div class="blob-cont">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
     </div>
 
-    <nav class="flex justify-between items-center px-8 py-4 fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
-        <a href="index.html" class="text-xs font-bold tracking-widest border border-white/20 px-4 py-2 rounded-full hover:bg-white hover:text-black transition">← ESCAPE TO HUB</a>
-        <a href="index.html"><img src="logo.png" class="h-10 md:h-12 w-auto object-contain"></a>
+    <nav class="flex justify-between items-center px-6 py-4 fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <a href="index.html" class="border border-white/20 px-4 py-2 rounded-full text-xs font-bold hover:bg-white hover:text-black transition">← BACK</a>
+        
+        <img src="logo.png" class="h-12 w-auto object-contain">
+        
+        <button onclick="toggleTheme()" class="text-xl hover:text-yellow-400 transition">
+            <i id="theme-icon" class="fas fa-moon"></i>
+        </button>
     </nav>
 
-    <section class="min-h-[50vh] flex flex-col justify-center px-6 md:px-20 relative z-10 text-center md:text-left pt-40">
-        <h1 class="text-5xl md:text-8xl font-bold leading-none hero-text">
+    <section class="pt-32 pb-10 px-4 text-center">
+        <h1 class="text-4xl md:text-7xl font-bold leading-tight hero-text mb-4">
             DON'T BE <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-yellow-500">BORING.</span>
         </h1>
-        <p class="mt-6 text-xl md:text-2xl max-w-2xl text-gray-200 opacity-0 hero-sub font-light">
+        <p class="text-gray-400 max-w-xl mx-auto text-base md:text-lg hero-sub leading-relaxed">
             We turn "just another company" into a cult favorite. From viral tweets to cinematic visuals, we bring the flavor.
         </p>
     </section>
 
-    <section class="px-6 md:px-20 py-20 bg-black/40 backdrop-blur-md">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section class="px-4 md:px-20 py-10 pb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
             
-            <a href="social-media.html" class="service-card p-8 rounded-2xl group border-t-4 border-pink-500 block hover:scale-105 transition">
-                <span class="badge bg-pink-500/20 text-pink-500">The Loudspeaker</span>
-                <h3 class="text-3xl font-bold mb-3">Social Media</h3>
-                <p class="text-gray-400 mb-4">We handle the memes, comments, and DMs so you stay relevant.</p>
+            <a href="social-media.html" class="glass-card p-6 md:p-8 rounded-2xl group border-t-4 border-pink-500 block hover:scale-[1.02] transition">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="badge bg-pink-500/20 text-pink-500 text-[10px] font-bold px-2 py-1 rounded">THE LOUDSPEAKER</span>
+                    <i class="fas fa-bullhorn text-pink-500 text-xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Social Media</h3>
+                <p class="text-gray-400 text-sm mb-4 leading-relaxed">Strategy, content creation, and community management.</p>
                 <div class="text-xs font-bold tracking-widest text-pink-400 group-hover:underline">VIEW PACKAGES →</div>
             </a>
 
-            <a href="production.html" class="service-card p-8 rounded-2xl group border-t-4 border-yellow-500 block hover:scale-105 transition">
-                <span class="badge bg-yellow-500/20 text-yellow-500">Visual Sorcery</span>
-                <h3 class="text-3xl font-bold mb-3">Media Production</h3>
-                <p class="text-gray-400 mb-4">High-end Photography & Videography. Make your brand look expensive.</p>
+            <a href="production.html" class="glass-card p-6 md:p-8 rounded-2xl group border-t-4 border-yellow-500 block hover:scale-[1.02] transition">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="badge bg-yellow-500/20 text-yellow-500 text-[10px] font-bold px-2 py-1 rounded">VISUAL SORCERY</span>
+                    <i class="fas fa-camera text-yellow-500 text-xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Media Production</h3>
+                <p class="text-gray-400 text-sm mb-4 leading-relaxed">High-end Photography & Videography. Cinema quality.</p>
                 <div class="text-xs font-bold tracking-widest text-yellow-400 group-hover:underline">VIEW GALLERY →</div>
             </a>
 
-            <a href="digital-marketing.html" class="service-card p-8 rounded-2xl group border-t-4 border-green-500 block hover:scale-105 transition">
-                <span class="badge bg-green-500/20 text-green-500">Money Printer</span>
-                <h3 class="text-3xl font-bold mb-3">Digital Ads</h3>
-                <p class="text-gray-400 mb-4">Google & Meta ads that hunt down your ideal customers.</p>
+            <a href="digital-marketing.html" class="glass-card p-6 md:p-8 rounded-2xl group border-t-4 border-green-500 block hover:scale-[1.02] transition">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="badge bg-green-500/20 text-green-500 text-[10px] font-bold px-2 py-1 rounded">MONEY PRINTER</span>
+                    <i class="fas fa-chart-line text-green-500 text-xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Digital Ads</h3>
+                <p class="text-gray-400 text-sm mb-4 leading-relaxed">Google & Meta ads that hunt down your customers.</p>
                 <div class="text-xs font-bold tracking-widest text-green-400 group-hover:underline">VIEW ROI →</div>
             </a>
 
-            <a href="va.html" class="service-card p-8 rounded-2xl group border-t-4 border-teal-500 block hover:scale-105 transition">
-                <span class="badge bg-teal-500/20 text-teal-500">The Support</span>
-                <h3 class="text-3xl font-bold mb-3">Virtual Assistance</h3>
-                <p class="text-gray-400 mb-4">Admin, Email, and Research. Your remote office team.</p>
-                <div class="text-xs font-bold tracking-widest text-teal-400 group-hover:underline">VIEW RATES →</div>
+            <a href="va.html" class="glass-card p-6 md:p-8 rounded-2xl group border-t-4 border-blue-500 block hover:scale-[1.02] transition">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="badge bg-blue-500/20 text-blue-500 text-[10px] font-bold px-2 py-1 rounded">THE SUPPORT</span>
+                    <i class="fas fa-headset text-blue-500 text-xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Virtual Assistance</h3>
+                <p class="text-gray-400 text-sm mb-4 leading-relaxed">Admin, Research, and Personal Tasks. Your remote team.</p>
+                <div class="text-xs font-bold tracking-widest text-blue-400 group-hover:underline">VIEW RATES →</div>
             </a>
 
-            <a href="bpo.html" class="service-card p-8 rounded-2xl group border-t-4 border-blue-500 block hover:scale-105 transition">
-                <span class="badge bg-blue-500/20 text-blue-500">The Voice</span>
-                <h3 class="text-3xl font-bold mb-3">BPO & Calls</h3>
-                <p class="text-gray-400 mb-4">Call center agents for sales and support. We answer 24/7.</p>
-                <div class="text-xs font-bold tracking-widest text-blue-400 group-hover:underline">VIEW AGENTS →</div>
+            <a href="bpo.html" class="glass-card p-6 md:p-8 rounded-2xl group border-t-4 border-teal-500 block hover:scale-[1.02] transition">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="badge bg-teal-500/20 text-teal-500 text-[10px] font-bold px-2 py-1 rounded">THE VOICE</span>
+                    <i class="fas fa-phone-alt text-teal-500 text-xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">BPO & Calls</h3>
+                <p class="text-gray-400 text-sm mb-4 leading-relaxed">Call center agents for sales and support. 24/7 access.</p>
+                <div class="text-xs font-bold tracking-widest text-teal-400 group-hover:underline">VIEW AGENTS →</div>
             </a>
 
-            <a href="branding.html" class="service-card p-8 rounded-2xl group border-t-4 border-orange-500 block hover:scale-105 transition">
-                <span class="badge bg-orange-500/20 text-orange-500">The Face</span>
-                <h3 class="text-3xl font-bold mb-3">Branding</h3>
-                <p class="text-gray-400 mb-4">Logos, colors, and identity design that tells your story.</p>
+            <a href="branding.html" class="glass-card p-6 md:p-8 rounded-2xl group border-t-4 border-orange-500 block hover:scale-[1.02] transition">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="badge bg-orange-500/20 text-orange-500 text-[10px] font-bold px-2 py-1 rounded">THE FACE</span>
+                    <i class="fas fa-paint-brush text-orange-500 text-xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Branding</h3>
+                <p class="text-gray-400 text-sm mb-4 leading-relaxed">Logos, colors, and identity design that tells a story.</p>
                 <div class="text-xs font-bold tracking-widest text-orange-400 group-hover:underline">VIEW EXAMPLES →</div>
             </a>
 
         </div>
     </section>
 
-    <section class="py-24 px-6 md:px-20 relative z-10">
-        <div class="bg-gradient-to-br from-gray-900 to-black border border-white/10 p-10 md:p-16 rounded-3xl">
-            <h2 class="text-4xl font-bold mb-6">LET'S MAKE MAGIC.</h2>
+    <section class="py-10 px-4 md:px-20 relative z-10">
+        <div class="bg-gradient-to-br from-gray-900 to-black border border-white/10 p-6 md:p-10 rounded-3xl max-w-2xl mx-auto">
+            <h2 class="text-3xl font-bold mb-6 text-center">LET'S MAKE MAGIC.</h2>
             <form name="marketing-main" method="POST" data-netlify="true" class="space-y-4">
-    <input type="hidden" name="form-name" value="marketing-main" />
-
-    <div class="grid grid-cols-2 gap-4">
-        <input type="text" name="name" placeholder="Name" class="w-full bg-transparent border-b border-white/30 p-3 text-white outline-none focus:border-pink-500 transition" required>
-        <input type="text" name="company" placeholder="Company" class="w-full bg-transparent border-b border-white/30 p-3 text-white outline-none focus:border-pink-500 transition">
-    </div>
-    <input type="email" name="email" placeholder="Email Address" class="w-full bg-transparent border-b border-white/30 p-3 text-white outline-none focus:border-pink-500 transition" required>
-    <select name="service" class="w-full bg-transparent border-b border-white/30 p-3 text-white outline-none focus:border-pink-500 transition">
-        <option class="bg-black">What do you need?</option>
-        <option class="bg-black" value="social">Social Media</option>
-        <option class="bg-black" value="production">Media Production</option>
-        <option class="bg-black" value="ads">Digital Marketing</option>
-        <option class="bg-black" value="va">Virtual Assistance</option>
-        <option class="bg-black" value="branding">Branding</option>
-    </select>
-    <textarea name="message" rows="3" placeholder="Tell us about your project..." class="w-full bg-transparent border-b border-white/30 p-3 text-white outline-none focus:border-pink-500 transition"></textarea>
-    
-    <button type="submit" class="w-full py-4 bg-white text-black font-bold rounded-xl hover:bg-pink-500 hover:text-white transition">SEND IT 🚀</button>
-</form>
+                <input type="hidden" name="form-name" value="marketing-main" />
+                
+                <input type="text" name="name" placeholder="Name" class="w-full bg-transparent border-b border-white/30 p-3 text-white outline-none focus:border-pink-500 transition" required>
+                <input type="text" name="company" placeholder="Company" class="w-full bg-transparent border-b border-white/30 p-3 text-white outline-none focus:border-pink-500 transition">
+                <input type="email" name="email" placeholder="Email Address" class="w-full bg-transparent border-b border-white/30 p-3 text-white outline-none focus:border-pink-500 transition" required>
+                <select name="service" class="w-full bg-transparent border-b border-white/30 p-3 text-white outline-none focus:border-pink-500 transition">
+                    <option class="bg-black">What do you need?</option>
+                    <option class="bg-black" value="social">Social Media</option>
+                    <option class="bg-black" value="production">Media Production</option>
+                    <option class="bg-black" value="ads">Digital Marketing</option>
+                    <option class="bg-black" value="va">Virtual Assistance</option>
+                    <option class="bg-black" value="bpo">BPO Calls</option>
+                    <option class="bg-black" value="branding">Branding</option>
+                </select>
+                <textarea name="message" rows="3" placeholder="Tell us about your project..." class="w-full bg-transparent border-b border-white/30 p-3 text-white outline-none focus:border-pink-500 transition"></textarea>
+                <button type="submit" class="w-full py-4 bg-white text-black font-bold rounded-xl hover:bg-pink-500 hover:text-white transition">SEND IT 🚀</button>
+            </form>
         </div>
     </section>
 
-   <footer class="py-8 text-center relative z-10 border-t border-white/10 bg-black">
-        
+    <footer class="py-8 text-center relative z-10 border-t border-white/10 bg-black">
         <h2 class="text-xl font-bold opacity-50 mb-4 tracking-widest">CONTACT US</h2>
-        
         <div class="mb-6 space-y-1 text-sm text-gray-400 font-light">
             <p><i class="fas fa-envelope mr-2"></i> hatuainnovationstudio@gmail.com</p>
             <p><i class="fas fa-phone mr-2"></i> +254 700 000 000</p>
         </div>
-
         <div class="flex justify-center gap-6 mb-6 text-2xl">
             <a href="https://instagram.com" target="_blank" class="text-gray-600 hover:text-pink-500 transition duration-300"><i class="fab fa-instagram"></i></a>
             <a href="https://facebook.com" target="_blank" class="text-gray-600 hover:text-blue-600 transition duration-300"><i class="fab fa-facebook"></i></a>
@@ -137,12 +147,9 @@
             <a href="https://linkedin.com" target="_blank" class="text-gray-600 hover:text-blue-400 transition duration-300"><i class="fab fa-linkedin"></i></a>
             <a href="https://wa.me/254700000000" target="_blank" class="text-gray-600 hover:text-green-500 transition duration-300"><i class="fab fa-whatsapp"></i></a>
         </div>
-
         <p class="text-[10px] text-gray-700 tracking-[0.2em]">© 2025 HATUA INNOVATION STUDIO.</p>
     </footer>
-    <script>
-        gsap.to(".hero-text", { opacity: 1, y: 0, duration: 1.5, ease: "power4.out" });
-        gsap.to(".hero-sub", { opacity: 1, y: 0, duration: 1.5, delay: 0.3, ease: "power4.out" });
-    </script>
+
+    <script src="main.js"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@ if (cursorDot && cursorOutline) {
         cursorDot.style.left = `${posX}px`;
         cursorDot.style.top = `${posY}px`;
 
-        // Outline follows much faster now (Duration changed from 500 to 80)
+        // Outline follows fast (80ms duration)
         cursorOutline.animate({
             left: `${posX}px`,
             top: `${posY}px`
@@ -31,6 +31,44 @@ document.querySelectorAll('.cursor-hover, a, button').forEach(el => {
         cursorOutline.style.backgroundColor = 'transparent';
         cursorOutline.style.borderColor = 'rgba(255, 255, 255, 0.5)'; // Restore border
     });
+});
+
+/* --- THEME TOGGLE LOGIC (DARK / LIGHT MODE) --- */
+function toggleTheme() {
+    const body = document.body;
+    const icon = document.getElementById('theme-icon');
+    
+    // Toggle Class
+    body.classList.toggle('light-mode');
+    
+    // Change Icon & Save Preference
+    if (body.classList.contains('light-mode')) {
+        if(icon) {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
+        localStorage.setItem('theme', 'light');
+    } else {
+        if(icon) {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        }
+        localStorage.setItem('theme', 'dark');
+    }
+}
+
+// Check Local Storage on Load
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme');
+    const icon = document.getElementById('theme-icon');
+    
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
+        if(icon) {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
+    }
 });
 
 /* --- 3D BACKGROUND (THREE.JS) --- */
@@ -95,5 +133,6 @@ if (container) {
     // Hero Text Intro Animation
     if (typeof gsap !== 'undefined') {
         gsap.from(".hero-text", { opacity: 0, y: 50, duration: 1.5, delay: 0.5, ease: "power4.out" });
+        gsap.from(".hero-sub", { opacity: 0, y: 0, duration: 1.5, delay: 0.3, ease: "power4.out" });
     }
 }

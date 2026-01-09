@@ -132,3 +132,74 @@ nav {
     padding-top: 20px;
     padding-bottom: 20px;
 }
+/* --- LIGHT MODE VARIABLES --- */
+body.light-mode {
+    background-color: #f3f4f6 !important; /* Light Gray Background */
+    color: #111827 !important; /* Dark Text */
+}
+
+/* Light Mode Navigation */
+body.light-mode nav {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light-mode nav a, 
+body.light-mode nav i {
+    color: #000 !important;
+}
+
+/* Light Mode Cards */
+body.light-mode .glass-card, 
+body.light-mode .service-card,
+body.light-mode .terminal-card,
+body.light-mode .blueprint-card {
+    background: rgba(255, 255, 255, 0.7) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .glass-card:hover {
+    background: #fff !important;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Light Mode Text & Inputs */
+body.light-mode h1, 
+body.light-mode h2, 
+body.light-mode h3, 
+body.light-mode p, 
+body.light-mode span,
+body.light-mode li {
+    color: #111 !important;
+}
+
+/* Keep accent colors (Pink, Blue, etc) visible */
+body.light-mode .text-pink-500 { color: #ec4899 !important; }
+body.light-mode .text-blue-500 { color: #3b82f6 !important; }
+body.light-mode .text-green-500 { color: #22c55e !important; }
+body.light-mode .text-yellow-500 { color: #eab308 !important; }
+body.light-mode .text-purple-500 { color: #a855f7 !important; }
+body.light-mode .text-orange-500 { color: #f97316 !important; }
+body.light-mode .text-cyan-400 { color: #06b6d4 !important; }
+
+/* Inputs in Light Mode */
+body.light-mode input, 
+body.light-mode select, 
+body.light-mode textarea {
+    background: rgba(0, 0, 0, 0.05) !important;
+    border-color: rgba(0, 0, 0, 0.2) !important;
+    color: #000 !important;
+}
+
+body.light-mode input::placeholder,
+body.light-mode textarea::placeholder {
+    color: #666 !important;
+}
+
+/* Hide Background Elements in Light Mode (Stars/Matrix) so it looks clean */
+body.light-mode canvas,
+body.light-mode .stars,
+body.light-mode .blob-cont {
+    opacity: 0.1 !important;
+}
