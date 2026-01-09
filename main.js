@@ -1,4 +1,6 @@
-/* --- CUSTOM CURSOR LOGIC --- */
+/* =========================================
+   1. CUSTOM CURSOR LOGIC
+   ========================================= */
 const cursorDot = document.querySelector('.cursor-dot');
 const cursorOutline = document.querySelector('.cursor-outline');
 
@@ -11,7 +13,7 @@ if (cursorDot && cursorOutline) {
         cursorDot.style.left = `${posX}px`;
         cursorDot.style.top = `${posY}px`;
 
-        // Outline follows much faster now (80ms)
+        // Outline follows faster (80ms)
         cursorOutline.animate({
             left: `${posX}px`,
             top: `${posY}px`
@@ -19,21 +21,28 @@ if (cursorDot && cursorOutline) {
     });
 }
 
-// Hover effects for interactive elements
-document.querySelectorAll('.cursor-hover, a, button').forEach(el => {
-    el.addEventListener('mouseenter', () => {
+// Hover effects for interactive elements (Updated to handle dynamically loaded links)
+// We use 'mouseover' on the document to catch elements added after the page loads
+document.addEventListener('mouseover', (e) => {
+    if (e.target.closest('a, button, .cursor-hover')) {
         cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
         cursorOutline.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
-        cursorOutline.style.borderColor = 'rgba(255, 255, 255, 0)'; // Fade border
-    });
-    el.addEventListener('mouseleave', () => {
-        cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
-        cursorOutline.style.backgroundColor = 'transparent';
-        cursorOutline.style.borderColor = 'rgba(255, 255, 255, 0.5)'; // Restore border
-    });
+        cursorOutline.style.borderColor = 'rgba(255, 255, 255, 0)';
+    }
 });
 
-/* --- 3D BACKGROUND (THREE.JS) --- */
+document.addEventListener('mouseout', (e) => {
+    if (e.target.closest('a, button, .cursor-hover')) {
+        cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
+        cursorOutline.style.backgroundColor = 'transparent';
+        cursorOutline.style.borderColor = 'rgba(255, 255, 255, 0.5)';
+    }
+});
+
+
+/* =========================================
+   2. 3D BACKGROUND (THREE.JS)
+   ========================================= */
 const container = document.getElementById('webgl-container');
 
 if (container) {
@@ -45,7 +54,7 @@ if (container) {
 
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(window.devicePixelRatio); // Sharper stars
+    renderer.setPixelRatio(window.devicePixelRatio);
     container.appendChild(renderer.domElement);
 
     const starGeo = new THREE.BufferGeometry();
@@ -83,20 +92,67 @@ if (container) {
     }
     animate();
 
-    // Handle Window Resize
     window.addEventListener('resize', () => {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
     });
 
-    // Hero Text Intro Animation
     if (typeof gsap !== 'undefined') {
         gsap.from(".hero-text", { opacity: 0, y: 50, duration: 1.5, delay: 0.5, ease: "power4.out" });
         gsap.from(".hero-sub", { opacity: 0, y: 0, duration: 1.5, delay: 0.3, ease: "power4.out" });
     }
 }
-// Function to load HTML components
+
+
+/* =========================================
+   3. COMPONENT LOADER & SERVICES
+   ========================================= */
+
+// Data for Services Section (Updated "FutureTech" to Coming Soon)
+const services = [
+    { 
+        link: "marketing.html", 
+        icon: "fa-bullhorn", 
+        color: "text-[--neon-blue]", 
+        title: "Creative Studio", 
+        desc: "Marketing & Design.", 
+        grad: "from-pink-500/20 to-purple-600/20" 
+    },
+    { 
+        link: "tech.html", 
+        icon: "fa-terminal", 
+        color: "text-[--neon-purple]", 
+        title: "Tech & Dev", 
+        desc: "Software & Code.", 
+        grad: "from-green-500/20 to-blue-600/20" 
+    },
+    { 
+        link: "#", 
+        icon: "fa-microchip", 
+        color: "text-gray-500", // Dimmed color
+        title: "FutureTech Lab", 
+        desc: "COMING SOON", 
+        grad: "from-gray-900/40 to-gray-800/40" 
+    }
+];
+
+// Function to generate the HTML for services
+function renderServices() {
+    const grid = document.getElementById('services-grid');
+    if (!grid) return; // Stop if we are not on the homepage
+    
+    grid.innerHTML = services.map(s => `
+        <a href="${s.link}" class="glass-card p-10 rounded-none cursor-hover group block relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br ${s.grad} opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="text-5xl ${s.color} mb-6 relative z-10"><i class="fas ${s.icon}"></i></div>
+            <h3 class="text-2xl mb-4 relative z-10">${s.title}</h3>
+            <p class="text-gray-400 leading-relaxed relative z-10">${s.desc}</p>
+        </a>
+    `).join('');
+}
+
+// Function to load Navbar and Footer
 function loadComponent(elementId, filePath) {
     fetch(filePath)
         .then(response => {
@@ -109,8 +165,14 @@ function loadComponent(elementId, filePath) {
         .catch(error => console.error('Error loading component:', error));
 }
 
-// Load the Navbar and Footer immediately
+// Initialize everything when the page is ready
 document.addEventListener("DOMContentLoaded", function() {
+    // 1. Load Navbar
     loadComponent("navbar-placeholder", "navbar.html");
+    
+    // 2. Load Footer
     loadComponent("footer-placeholder", "footer.html");
+
+    // 3. Render the Services Grid
+    renderServices();
 });
