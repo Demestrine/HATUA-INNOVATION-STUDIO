@@ -175,4 +175,37 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // 3. Render the Services Grid
     renderServices();
-});
+});// Function to Trigger Payment
+async function payWithPesapal(amount, name, email) {
+    const btn = document.getElementById('pay-btn');
+    const originalText = btn.innerText;
+    btn.innerText = "PROCESSING...";
+    
+    try {
+        // Call your Netlify Function
+        const response = await fetch('/.netlify/functions/pay', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+                amount: amount, 
+                name: name,
+                email: email,
+                phone: "" // Optional
+            })
+        });
+
+        const data = await response.json();
+
+        if (data.url) {
+            // Redirect user to Pesapal to pay
+            window.location.href = data.url;
+        } else {
+            alert("Payment Error: Could not generate link.");
+            btn.innerText = originalText;
+        }
+    } catch (error) {
+        console.error(error);
+        alert("System Error. Please try again.");
+        btn.innerText = originalText;
+    }
+}

@@ -144,7 +144,59 @@
         </div>
         <p class="text-[10px] text-gray-700 tracking-[0.2em]">© 2025 HATUA INNOVATION STUDIO.</p>
     </footer>
+<div class="glass-card p-8 text-center max-w-md mx-auto mt-10">
+    <h3 class="text-xl text-white mb-4">Complete Payment</h3>
+    
+    <input type="text" id="client-name" placeholder="Your Name" class="block w-full mb-3 p-3 bg-white/10 text-white border border-white/20">
+    <input type="email" id="client-email" placeholder="Your Email" class="block w-full mb-6 p-3 bg-white/10 text-white border border-white/20">
+    
+    <button onclick="payNow(100)" id="pay-btn" class="w-full bg-[--neon-blue] text-black font-bold py-3 hover:bg-white transition-colors">
+        PAY NOW (TEST 100 KES)
+    </button>
+</div>
 
+<script>
+async function payNow(amount) {
+    const btn = document.getElementById('pay-btn');
+    const name = document.getElementById('client-name').value;
+    const email = document.getElementById('client-email').value;
+
+    if(!name || !email) { 
+        alert("Please enter your name and email first."); 
+        return; 
+    }
+
+    // Visual feedback
+    const originalText = btn.innerText;
+    btn.innerText = "PROCESSING...";
+    
+    try {
+        // 1. Call the 'pay.js' file on the server
+        const response = await fetch('/.netlify/functions/pay', {
+            method: 'POST',
+            body: JSON.stringify({ 
+                amount: amount, 
+                name: name, 
+                email: email 
+            })
+        });
+
+        const data = await response.json();
+
+        // 2. If we got a link, go there
+        if (data.url) {
+            window.location.href = data.url;
+        } else {
+            alert("Payment failed to initialize.");
+            btn.innerText = originalText;
+        }
+    } catch (error) {
+        console.error(error);
+        alert("System Error. Check console.");
+        btn.innerText = originalText;
+    }
+}
+</script>
     <script src="main.js"></script>
 </body>
 </html>
